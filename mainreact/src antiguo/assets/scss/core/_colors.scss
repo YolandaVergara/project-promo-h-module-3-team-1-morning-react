@@ -1,0 +1,67 @@
+//Palette 1 - por defecto
+
+.card-palette1 {
+  .card-name {
+    color: $colorDarkGreenBlue;
+  }
+  .border-info {
+    border-left: 0.5rem $colorBlue solid;
+  }
+  .tel,
+  .email,
+  .linkedin,
+  .github {
+    border: 2px solid $colorGreen;
+  }
+}
+
+//Palette 2
+
+.card-palette2 {
+  .card-name {
+    color: $colorDriedBlood;
+  }
+  .border-info {
+    border-left: 0.5rem $colorRustyRed solid;
+  }
+  .tel,
+  .email,
+  .linkedin,
+  .github {
+    border: 2px solid $colorTomato;
+  }
+}
+
+//Palette 3
+
+.card-palette3 {
+  .card-name {
+    color: $colorSlate;
+  }
+  .border-info {
+    border-left: 0.5rem $colorFadedOrange solid;
+  }
+  .tel,
+  .email,
+  .linkedin,
+  .github {
+    border: 2px solid $colorLightGreyBlue;
+  }
+}
+
+//Palette 4
+
+.card-palette4 {
+  .card-name {
+    color: $colorPurplePaquita;
+  }
+  .border-info {
+    border-left: 0.5rem $colorRedPaquita solid;
+  }
+  .tel,
+  .email,
+  .linkedin,
+  .github {
+    border: 2px solid $colorPinkPaquita;
+  }
+}

@@ -1,0 +1,137 @@
+.icons-1:before {
+  content: "\f248";
+  @include CardsIcons;
+}
+
+.arrow:after {
+  @include CardsArrow;
+}
+
+.design {
+  &-container {
+    padding: 0 2rem;
+
+    @media all and (min-width: 768px) {
+      padding: 0;
+    }
+  }
+
+  &__header {
+    display: flex;
+    position: relative;
+    padding: 2.7rem 0 1rem 3.1rem;
+    cursor: pointer;
+
+    &--title {
+      @include CardTitle;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &--title {
+      font-family: $fontFamily;
+      width: 6.2rem;
+      font-size: $fontSizeCardText;
+      color: $colorDarkGrey;
+      text-transform: $textTransformTitle;
+      margin-top: 2rem;
+      font-weight: 400;
+    }
+
+    &--radio {
+      cursor: pointer;
+    }
+  }
+}
+
+.form__palette {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+
+  &--1,
+  &--2,
+  &--3,
+  &--4 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+    align-items: center;
+  }
+}
+
+.label {
+  display: inherit;
+}
+.palette-color {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  margin-left: 1rem;
+  width: 9rem;
+  height: 2.5rem;
+
+  &__1 {
+    width: 3rem;
+    background: $colorDarkGreenBlue;
+  }
+
+  &__2 {
+    width: 3rem;
+    background: $colorBlue;
+  }
+
+  &__3 {
+    width: 3rem;
+    background: $colorGreen;
+  }
+
+  &__4 {
+    width: 3rem;
+    background: $colorDriedBlood;
+  }
+
+  &__5 {
+    width: 3rem;
+    background: $colorRustyRed;
+  }
+
+  &__6 {
+    width: 3rem;
+    background: $colorTomato;
+  }
+
+  &__7 {
+    width: 3rem;
+    background: $colorSlate;
+  }
+
+  &__8 {
+    width: 3rem;
+    background: $colorFadedOrange;
+  }
+
+  &__9 {
+    width: 3rem;
+    background: $colorLightGreyBlue;
+  }
+
+  &__10 {
+    width: 3rem;
+    background: $colorPurplePaquita;
+  }
+
+  &__11 {
+    width: 3rem;
+    background: $colorRedPaquita;
+  }
+
+  &__12 {
+    width: 3rem;
+    background: $colorPinkPaquita;
+  }
+}
