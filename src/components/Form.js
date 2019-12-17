@@ -1,7 +1,8 @@
 import React from "react";
 
-import "../stylesheets/layout/fill.scss";
 import "../stylesheets/layout/design.scss";
+import "../stylesheets/layout/fill.scss";
+import "../stylesheets/layout/share.scss";
 
 function Form() {
   return (
@@ -55,7 +56,7 @@ function Form() {
         </div>
       </section>
 
-      <form action="" method="" id="js-form-fill" className="js-form">
+      <form action="" method="" id="js-form-fill" className="js-form collapsable-open">
         <fieldset className="form-fill">
           <div className="form-fill__group--title icons-2 arrow js-collapsable--trigger">
             <legend className="form-fill__title">Rellena</legend>
@@ -103,6 +104,23 @@ function Form() {
           </div>
         </fieldset>
       </form>
+      <section className="share__container js-collapsable collapsable-open">
+        <div className="share__header icons-3 arrow js-collapsable--trigger">
+          <h4 className="share__title">comparte</h4>
+        </div>
+        <div className="share__card collapsable--content">
+          <button className="share__card__button-create icon-card button--filter js-share-button" title="Crea tu tarjeta">
+            Crear tarjeta
+          </button>
+          <div className="share__notification js-share--url share--url">
+            <h4 className="notification__title">La tarjeta ha sido creada:</h4>
+            <p className="notification__link js-notification-link" title="Comparte tu tarjeta con este link"></p>
+            <a className="notification__button-tw js__button-Twitter icon-tw" href="" title="Comparte tu tarjeta a través de twitter" target="_blank">
+              Compartir en twitter
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
