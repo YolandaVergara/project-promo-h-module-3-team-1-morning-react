@@ -1,5 +1,4 @@
 import React from "react";
-import FormElement from "./FormElement";
 import Form from "./Form";
 
 import "../stylesheets/layout/design.scss";
@@ -64,42 +63,10 @@ function Cajon() {
             <legend className="form-fill__title">Rellena</legend>
           </div>
           <div className="form-fill__content collapsable--content">
-        <Form />
 
-            <label className="form-fill__label" htmlFor="form-job">
-              Puesto *
-            </label>
-            <input className="form-fill__input js-form-job" type="text" id="form-job" name="job" placeholder="Ej:Representante de artistas" maxlenght="30" title="Introduce entre 2 y 30 letras" required />
-            <div className="form-fill__group-photo">
-              <label className="form-fill__label" htmlFor="form-photo">
-                Imagen de perfil
-              </label>
-              <input className="form-fill__input hidden js-file-input" type="file" id="form-photo" name="photo" />
-              <button className="form-fill__group-photo--button js-uploadBtn" title="Selecciona tu foto">
-                Añadir imagen
-              </button>
-              <div className="form-fill__group-photo--preview js-preview"></div>
-            </div>
-            <label className="form-fill__label" htmlFor="form-phone">
-              Teléfono *
-            </label>
-            <input className="form-fill__input js-form-tel" type="tel" id="form-phone" name="phone" placeholder="Ej: 666778899"  title="Número de 9 cifras" required />
+          <Form />
 
-            <label className="form-fill__label" htmlFor="form-email">
-              Email *
-            </label>
-            <input className="form-fill__input js-form-email" type="email" id="form-email" name="email" placeholder="Ej: psmanagement@gmail.com" title="email@paquitasalas.es" required />
-
-            <label className="form-fill__label" htmlFor="form-linkedin">
-              Linkedin *
-            </label>
-            <input className="form-fill__input js-form-linkedin" type="text" id="form-linkedin" name="linkedin" placeholder="Ej: paquitasalas" title="paquitasalas" required />
-
-            <label className="form-fill__label" htmlFor="form-github">
-              Github *
-            </label>
-            <input className="form-fill__input js-form-github" type="text" id="form-github" name="github" placeholder="Ej: paquitasalas" title="paquitasalas" required/>
-            <span className="legend">Los campos señalados con * son obligatorios</span>
+          <span className="legend">Los campos señalados con * son obligatorios</span>
           </div>
         </fieldset>
       </form>
