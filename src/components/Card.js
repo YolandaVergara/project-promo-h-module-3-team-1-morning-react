@@ -1,10 +1,12 @@
 import React from "react";
+import Form from "./Form";
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
 function Card() {
   return (
-    <React.Fragment>
+    
+      <main className="cards">
       <section className="card-photo">
         <div className="card-photo__button">
           <button type="button" className="card-photo__button__reset icon-reset js-reset-button" title="Reset">
@@ -38,7 +40,9 @@ function Card() {
           </div>
         </div>
       </section>
-    </React.Fragment>
+      
+    <Form />
+    </main>
   );
 }
 
