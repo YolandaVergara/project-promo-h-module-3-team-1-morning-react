@@ -3,6 +3,7 @@ import React from "react";
 import "../stylesheets/App.scss";
 import Header from "./Header";
 import Card from "./Card";
+import Form from "./Form";
 import Footer from "./Footer";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Card />
-  
+      <Form />  
       <Footer />
     </div>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "./Form";
+import Form from "./Cajon";
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
