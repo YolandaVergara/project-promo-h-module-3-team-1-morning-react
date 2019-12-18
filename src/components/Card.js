@@ -1,12 +1,12 @@
 import React from "react";
-import Form from "./Cajon";
+
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
+import CollapsibleContainer from "./CollapsibleContainer";
 
 function Card() {
   return (
-    
-      <main className="cards">
+    <main className="cards">
       <section className="card-photo">
         <div className="card-photo__button">
           <button type="button" className="card-photo__button__reset icon-reset js-reset-button" title="Reset">
@@ -40,8 +40,8 @@ function Card() {
           </div>
         </div>
       </section>
-      
-    <Form />
+
+      <CollapsibleContainer />
     </main>
   );
 }
