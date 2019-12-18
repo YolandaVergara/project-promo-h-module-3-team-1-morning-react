@@ -21,14 +21,12 @@
         "component": "FormText"
     },
     {
-        "htmlFor": "form-job",
-        "label": "Foto",
-        "type": "text",
-        "id": "form-job",
-        "name": "job",
-        "placeholder": "Ej:Representante de artistas",
-        "maxlenght": 30,
-        "title": "Introduce entre 2 y 30 letras",
+        "classLabel": "form-fill__label",
+        "htmlFor": "form-photo",
+        "label": "Imagen de perfil",
+        "type": "file",
+        "id": "form-photo",
+        "name": "photo",
         "component": "FormImage"
     },
     {

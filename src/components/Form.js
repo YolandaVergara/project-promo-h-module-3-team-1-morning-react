@@ -1,35 +1,32 @@
 import React from 'react';
 import FormText from './FormText';
-import dataItems from './data/dataItems.json';
+import dataFields from './data/dataFields.json';
+import FormImage from './FormImage';
 
 
 class Form extends React.Component {
   render() {
     return (
-      dataItems.map((dataItem, key) => {
-        console.log(dataItem);
-        if (dataItem.component === 'FormText') {
+      dataFields.map((dataField, key) => {
+        if (dataField.component === 'FormText') {
           return (<FormText key={key}
-            htmlFor={dataItem.htmlFor}
-            label={dataItem.label}
-            type={dataItem.type}
-            id={dataItem.id}
-            name={dataItem.name}
-            placeholder={dataItem.placeholder}
-            maxlenght={dataItem.maxlenght}
-            title={dataItem.title}
+            htmlFor={dataField.htmlFor}
+            label={dataField.label}
+            type={dataField.type}
+            id={dataField.id}
+            name={dataField.name}
+            placeholder={dataField.placeholder}
+            maxlenght={dataField.maxlenght}
+            title={dataField.title}
           />
           );
         } else {
-          return (<FormText key={key}
-            htmlFor={dataItem.htmlFor}
-            label={dataItem.label}
-            type={dataItem.type}
-            id={dataItem.id}
-            name={dataItem.name}
-            placeholder={dataItem.placeholder}
-            maxlenght={dataItem.maxlenght}
-            title={dataItem.title}
+          return (<FormImage key={key}
+            htmlFor={dataField.htmlFor}
+            label={dataField.label}
+            type={dataField.type}
+            id={dataField.id}
+            name={dataField.name}
           />
           )
         }
