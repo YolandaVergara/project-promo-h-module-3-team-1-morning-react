@@ -1,10 +1,11 @@
 import React from "react";
+import Icons from "./Icons";
 
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 import CollapsibleContainer from "./CollapsibleContainer";
 
-function Card() {
+function Card(props) {
   return (
     <main className="cards">
       <section className="card-photo">
@@ -24,17 +25,18 @@ function Card() {
 
           <div>
             <ul className="card-photo__card__links">
+              <Icons />
               <li className="card-photo__card__links__items js-tel tel js-items--filter items--filter">
-                <a href="#" className="icon-tel js-card-tel" title="Teléfono" target="_blank"></a>
+                <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
               </li>
               <li className="card-photo__card__links__items js-email email js-items--filter items--filter">
-                <a href="#" className="icon-mail js-card-email" title="Email" target="_blank"></a>
+                <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
               </li>
               <li className="card-photo__card__links__items js-linkedin linkedin js-items--filter items--filter">
-                <a href="#" className="icon-linkedin js-card-linkedin" title="Linkedin" target="_blank"></a>
+                <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
               </li>
               <li className="card-photo__card__links__items js-github github js-items--filter items--filter">
-                <a href="#" className="icon-github js-card-github" title="GitHub" target="_blank"></a>
+                <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
               </li>
             </ul>
           </div>

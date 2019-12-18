@@ -1,0 +1,24 @@
+[{
+    "href": "#",
+    "className": "icon-tel js-card-tel",
+    "title": "Teléfono",
+    "target": "_blank"
+}, 
+{
+    "href": "#",
+    "className": "icon-mail js-card-email",
+    "title": "Email",
+    "target": "_blank"
+}, 
+{
+    "href": "#",
+    "className": "icon-linkedin js-card-linkedin",
+    "title": "Linkedin",
+    "target": "_blank"
+},
+{
+    "href": "#",
+    "className": "icon-github js-card-github",
+    "title": "GitHub",
+    "target": "_blank"
+} ]
