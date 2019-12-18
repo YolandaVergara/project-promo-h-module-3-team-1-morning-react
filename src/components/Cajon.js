@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "./Form";
+import PalettesList from "./PalettesList";
 
 import "../stylesheets/layout/design.scss";
 import "../stylesheets/layout/fill.scss";
@@ -15,44 +16,7 @@ function Cajon() {
         <div className="design__form collapsable--content">
           <h5 className="design__form--title">colores</h5>
           <form className="form__palette" id="js-form-design">
-            <div className="form__palette--1">
-              <label className="label" htmlFor=""></label>
-              <input value="1" type="radio" name="palette" id="form-palette1" className="design__form--radio js-form-palette1" defaultChecked="checked" />
-              <ul className="palette-color">
-                <li className="palette-color__1"></li>
-                <li className="palette-color__2"></li>
-                <li className="palette-color__3"></li>
-              </ul>
-            </div>
-            <div className="form__palette--2">
-              <label className="label" htmlFor="">
-                {" "}
-              </label>
-              <input value="2" type="radio" name="palette" id="form-palette2" className="design__form--radio js-form-palette2" />
-              <ul className="palette-color">
-                <li className="palette-color__4"></li>
-                <li className="palette-color__5"></li>
-                <li className="palette-color__6"></li>
-              </ul>
-            </div>
-            <div className="form__palette--3">
-              <label className="label" htmlFor=""></label>
-              <input value="3" type="radio" name="palette" id="form-palette3" className="design__form--radio js-form-palette3" />
-              <ul className="palette-color">
-                <li className="palette-color__7"></li>
-                <li className="palette-color__8"></li>
-                <li className="palette-color__9"></li>
-              </ul>
-            </div>
-            <div className="form__palette--4">
-              <label className="label" htmlFor=""></label>
-              <input value="4" type="radio" name="palette" id="form-palette4" className="design__form--radio js-form-palette4" />
-              <ul className="palette-color">
-                <li className="palette-color__10"></li>
-                <li className="palette-color__11"></li>
-                <li className="palette-color__12"></li>
-              </ul>
-            </div>
+            <PalettesList />
           </form>
         </div>
       </section>
@@ -64,9 +28,9 @@ function Cajon() {
           </div>
           <div className="form-fill__content collapsable--content">
 
-          <Form />
+            <Form />
 
-          <span className="legend">Los campos señalados con * son obligatorios</span>
+            <span className="legend">Los campos señalados con * son obligatorios</span>
           </div>
         </fieldset>
       </form>

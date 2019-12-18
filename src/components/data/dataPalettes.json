@@ -1,0 +1,53 @@
+[{
+        "htmlFor": "",
+        "value": "1",
+        "type": "radio",
+        "name": "palette",
+        "id": "form-palette1",
+        "defaultChecked": "checked",
+        "colors": {
+            "color1": "palette-color__1",
+            "color2": "palette-color__2",
+            "color3": "palette-color__3"
+        }
+    },
+    {
+        "htmlFor": "",
+        "value": "2",
+        "type": "radio",
+        "name": "palette",
+        "id": "form-palette2",
+        "defaultChecked": "",
+        "colors": {
+            "color1": "palette-color__4",
+            "color2": "palette-color__5",
+            "color3": "palette-color__6"
+        }
+    },
+    {
+        "htmlFor": "",
+        "value": "3",
+        "type": "radio",
+        "name": "palette",
+        "id": "form-palette3",
+        "defaultChecked": "",
+        "colors": {
+            "color1": "palette-color__7",
+            "color2": "palette-color__8",
+            "color3": "palette-color__9"
+        }
+    },
+    {
+        "htmlFor": "",
+        "value": "4",
+        "type": "radio",
+        "name": "palette",
+        "id": "form-palette4",
+        "defaultChecked": "",
+        "colors": {
+            "color1": "palette-color__10",
+            "color2": "palette-color__11",
+            "color3": "palette-color__12"
+        }
+    }
+]
