@@ -15,7 +15,10 @@ function App() {
     <div className="App">
       <Header />
 
-      <Card />
+      <main className="cards">
+        <Card />
+        <CollapsibleContainer />
+      </main>
 
       <Footer />
     </div>

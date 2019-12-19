@@ -8,6 +8,11 @@
   }
 }
 
+.icons-2:before {
+  content: "\f11c";
+  @include CardsIcons;
+}
+
 .form-fill {
   &__group--title {
     display: flex;
@@ -16,12 +21,8 @@
     position: relative;
     border-top: $colorBorderTop solid 0.1rem;
   }
-  .icons-2::before {
-    content: "\f11c";
-    @include CardsIcons;
-  }
 
-  .arrow::after {
+  .arrow:after {
     @include CardsArrow;
   }
 

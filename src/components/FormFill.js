@@ -4,7 +4,7 @@ import dataFields from './data/dataFields.json';
 import FormImage from './FormImage';
 
 
-class Form extends React.Component {
+class FormFill extends React.Component {
   render() {
     return (
       dataFields.map((dataField, key) => {
@@ -32,9 +32,8 @@ class Form extends React.Component {
         }
       }
       )
-
     )
   }
 }
 
-export default Form;    
+export default FormFill;    
