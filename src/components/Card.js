@@ -25,18 +25,6 @@ function Card(props) {
         <div>
           <ul className="card-photo__card__links">
             <Icons />
-            <li className="card-photo__card__links__items js-tel tel js-items--filter items--filter">
-              <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
-            </li>
-            <li className="card-photo__card__links__items js-email email js-items--filter items--filter">
-              <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
-            </li>
-            <li className="card-photo__card__links__items js-linkedin linkedin js-items--filter items--filter">
-              <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
-            </li>
-            <li className="card-photo__card__links__items js-github github js-items--filter items--filter">
-              <a href={props.href} className={props.className} title={props.title} target={props.target}></a>
-            </li>
           </ul>
         </div>
       </div>
