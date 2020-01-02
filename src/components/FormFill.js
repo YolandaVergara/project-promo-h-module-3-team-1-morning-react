@@ -8,6 +8,7 @@ class FormFill extends React.Component {
     super(props);
     this.state = {};
   }
+
   render() {
     return dataFields.map((dataField, key) => {
       if (dataField.component === "FormText") {

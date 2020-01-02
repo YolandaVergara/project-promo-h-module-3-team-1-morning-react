@@ -7,6 +7,13 @@ class FormText extends React.Component {
     this.state = {
       value: ""
     };
+    this.handleInput = this.handleInput.bind(this);
+  }
+
+  handleInput(ev) {
+    this.props.handleInput({
+      inputValue: ev.target.value
+    });
   }
 
   render() {

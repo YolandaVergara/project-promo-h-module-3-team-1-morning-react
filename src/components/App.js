@@ -19,12 +19,12 @@ class App extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
 
-  handleInput(ev) {
-    const inputValue = ev.target.value;
-    this.setState = {
-      value: inputValue
-    };
-    console.log(inputValue);
+  handleInput(data) {
+    console.log(data);
+
+    /* this.setState = {
+      value: ev.target.value
+    }; */
   }
 
   render() {
@@ -34,7 +34,7 @@ class App extends React.Component {
 
         <main className="cards">
           <Card />
-          <CollapsibleContainer handleInput={this.props.handleInput} />
+          <CollapsibleContainer handleInput={this.handleInput} />
         </main>
 
         <Footer />

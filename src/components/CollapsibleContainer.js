@@ -4,6 +4,11 @@ import FormFill from "./FormFill";
 import Collapsible from "./Collapsible";
 
 class CollapsibleContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -27,7 +32,6 @@ class CollapsibleContainer extends React.Component {
               <div className="form-fill__content collapsable--content">
                 <FormFill handleInput={this.props.handleInput} />
                 <span className="legend">
-                  {" "}
                   Los campos señalados con * son obligatorios
                 </span>
               </div>
