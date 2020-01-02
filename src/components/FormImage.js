@@ -10,11 +10,13 @@ class FormImage extends React.Component {
 
     this.handleImage = this.handleImage.bind(this);
   }
+
   handleImage(ev) {
     const fr = new FileReader();
     const myFile = ev.target.files[0];
     fr.onload = () => {
       this.props.handleImage(fr.result)
+
     }
     fr.readAsDataURL(myFile);
   }

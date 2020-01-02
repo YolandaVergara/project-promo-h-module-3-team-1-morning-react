@@ -10,6 +10,7 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +22,8 @@ class App extends React.Component {
 
   handleImage(file) {
     console.log(file)
+
+
     this.setState(
       {
         file: file
@@ -35,7 +38,7 @@ class App extends React.Component {
         <Header />
 
         <main className="cards">
-          <Card />
+          <Card file={this.state.file} />
           <CollapsibleContainer handleImage={this.handleImage} />
         </main>
 
