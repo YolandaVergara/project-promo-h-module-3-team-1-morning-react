@@ -5,6 +5,9 @@ import FormImage from './FormImage';
 
 
 class FormFill extends React.Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       dataFields.map((dataField, key) => {
@@ -27,6 +30,7 @@ class FormFill extends React.Component {
             type={dataField.type}
             id={dataField.id}
             name={dataField.name}
+            handleImage={this.props.handleImage}
           />
           )
         }
