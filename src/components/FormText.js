@@ -2,6 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class FormText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    };
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -16,6 +23,7 @@ class FormText extends React.Component {
           placeholder={this.props.placeholder}
           maxlenght={this.props.maxlenght}
           title={this.props.title}
+          onChange={this.handleInput}
         />
       </React.Fragment>
     );
