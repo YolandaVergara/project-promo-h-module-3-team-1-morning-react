@@ -19,8 +19,12 @@ function Card(props) {
 
       <div className="card-photo__card js-card card-palette1">
         <div className="card-photo__card__info border-info">
-          <h2 className="card-photo__card__info__name js-card-name card-name"></h2>
-          <h3 className="card-photo__card__info__job js-card-job">Profesión</h3>
+          <h2 className="card-photo__card__info__name js-card-name card-name">
+            {props.name || "Nombre Apellido"}
+          </h2>
+          <h3 className="card-photo__card__info__job js-card-job">
+            {props.job || "Profesión"}
+          </h3>
         </div>
 
         <div
@@ -31,7 +35,12 @@ function Card(props) {
 
         <div>
           <ul className="card-photo__card__links">
-            <Icons />
+            <Icons
+              phone={props.phone}
+              email={props.email}
+              linkedin={props.linkedin}
+              github={props.github}
+            />
           </ul>
         </div>
       </div>

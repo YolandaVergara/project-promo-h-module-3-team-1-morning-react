@@ -14,18 +14,19 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: "",
-      file: ""
+      name: ""
     };
     this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(data) {
-    console.log(data);
-
-    this.setState({
-      data: data
-    });
+    const name = data.inputName;
+    const value = data.inputValue;
+    if (value !== "") {
+      this.setState({
+        [name]: value
+      });
+    }
   }
 
   render() {
@@ -34,7 +35,14 @@ class App extends React.Component {
         <Header />
 
         <main className="cards">
-          <Card data={this.state.data} />
+          <Card
+            name={this.state.name}
+            job={this.state.job}
+            phone={this.state.phone}
+            email={this.state.email}
+            linkedin={this.state.linkedin}
+            github={this.state.github}
+          />
           <CollapsibleContainer handleInput={this.handleInput} />
         </main>
 
