@@ -5,7 +5,6 @@ import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
 function Card(props) {
-  /* console.log(props); */
   return (
     <section className="card-photo">
       <div className="card-photo__button">
@@ -36,13 +35,7 @@ function Card(props) {
 
         <div>
           <ul className="card-photo__card__links">
-            <Icons
-              info={props.info}
-              /* phone={props.phone}
-              email={props.email}
-              linkedin={props.linkedin}
-              github={props.github} */
-            />
+            <Icons info={props.info} />
           </ul>
         </div>
       </div>

@@ -42,15 +42,7 @@ class App extends React.Component {
         <Header />
 
         <main className="cards">
-          <Card
-            info={this.state}
-            /* name={this.state.name}
-            job={this.state.job}
-            phone={this.state.phone}
-            email={this.state.email}
-            linkedin={this.state.linkedin}
-            github={this.state.github} */
-          />
+          <Card info={this.state} />
           <CollapsibleContainer handleInput={this.handleInput} />
         </main>
 

@@ -5,7 +5,6 @@ import dataIcons from "./data/dataIcons.json";
 class Icons extends React.Component {
   constructor(props) {
     super(props);
-    /* console.log(props); */
   }
   render() {
     return dataIcons.map((dataIcon, key) => {
@@ -16,10 +15,6 @@ class Icons extends React.Component {
           className={dataIcon.className}
           title={dataIcon.title}
           target={dataIcon.target}
-          /*    phone={this.props.phone}
-          email={this.props.email}
-          linkedin={this.props.linkedin}
-          github={this.props.github} */
         />
       );
     });
