@@ -6,7 +6,6 @@ import FormImage from "./FormImage";
 class FormFill extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {

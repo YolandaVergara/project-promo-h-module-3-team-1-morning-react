@@ -14,7 +14,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
+      data: "",
+      file: ""
     };
     this.handleInput = this.handleInput.bind(this);
   }
@@ -22,9 +23,9 @@ class App extends React.Component {
   handleInput(data) {
     console.log(data);
 
-    /* this.setState = {
-      value: ev.target.value
-    }; */
+    this.setState({
+      data: data
+    });
   }
 
   render() {
@@ -33,7 +34,7 @@ class App extends React.Component {
         <Header />
 
         <main className="cards">
-          <Card />
+          <Card data={this.state.data} />
           <CollapsibleContainer handleInput={this.handleInput} />
         </main>
 

@@ -6,7 +6,6 @@ import Collapsible from "./Collapsible";
 class CollapsibleContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
   }
 
   render() {
