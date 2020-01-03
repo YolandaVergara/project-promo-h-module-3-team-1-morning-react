@@ -10,19 +10,37 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: ""
+    };
+    this.handleInput = this.handleInput.bind(this);
+  }
 
-      <main className="cards">
-        <Card />
-        <CollapsibleContainer />
-      </main>
+  handleInput(data) {
+    console.log(data);
 
-      <Footer />
-    </div>
-  );
+    /* this.setState = {
+      value: ev.target.value
+    }; */
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+
+        <main className="cards">
+          <Card />
+          <CollapsibleContainer handleInput={this.handleInput} />
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
