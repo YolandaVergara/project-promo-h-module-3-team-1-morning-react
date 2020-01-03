@@ -1,11 +1,15 @@
 import React from "react";
 import Icons from "./Icons";
+import placeholderImage from "../images/paquita.jpg";
+
 
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
 
 function Card(props) {
+
+
   return (
     <section className="card-photo">
       <div className="card-photo__button">
@@ -21,10 +25,14 @@ function Card(props) {
           <h3 className="card-photo__card__info__job js-card-job">Profesión</h3>
         </div>
 
-        <img className="card-photo__card__image js-image-profile"
+        <div className="card-photo__card__image js-image-profile"
           alt="Avatar"
           title="Imagen del usuario"
-          src={props.file} />
+          style={{ backgroundImage: `url(${props.file || placeholderImage})` }}
+
+        >
+
+        </div>
 
 
 
@@ -34,7 +42,7 @@ function Card(props) {
           </ul>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 
