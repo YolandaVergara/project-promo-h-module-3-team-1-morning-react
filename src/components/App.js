@@ -39,7 +39,9 @@ class App extends React.Component {
 
         <main className="cards">
           <Card file={this.state.file} />
-          <CollapsibleContainer handleImage={this.handleImage} />
+          <CollapsibleContainer handleImage={this.handleImage}
+            file={this.state.file}
+          />
         </main>
 
         <Footer />

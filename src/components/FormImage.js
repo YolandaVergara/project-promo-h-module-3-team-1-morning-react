@@ -1,4 +1,6 @@
 import React from 'react';
+import placeholderImage from "../images/paquita.jpg";
+
 
 class FormImage extends React.Component {
   constructor(props) {
@@ -49,7 +51,10 @@ class FormImage extends React.Component {
           >
             Añadir imagen
           </button>
-          <div className="form-fill__group-photo--preview js-preview"></div>
+          <div className="form-fill__group-photo--preview js-preview"
+            style={{ backgroundImage: `url(${this.props.file})` }}>
+
+          </div>
         </div>
       </React.Fragment>
     );

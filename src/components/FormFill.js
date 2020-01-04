@@ -12,7 +12,8 @@ class FormFill extends React.Component {
     return (
       dataFields.map((dataField, key) => {
         if (dataField.component === 'FormText') {
-          return (<FormText key={key}
+          return (<FormText
+            key={key}
             htmlFor={dataField.htmlFor}
             label={dataField.label}
             type={dataField.type}
@@ -24,19 +25,19 @@ class FormFill extends React.Component {
           />
           );
         } else {
-          return (<FormImage key={key}
+          return (<FormImage
+            key={key}
             htmlFor={dataField.htmlFor}
             label={dataField.label}
             type={dataField.type}
             id={dataField.id}
             name={dataField.name}
             handleImage={this.props.handleImage}
+            file={this.props.file}
           />
           )
         }
-      }
-      )
-    )
+      }))
   }
 }
 
