@@ -8,7 +8,7 @@ class FormText extends React.Component {
   }
 
   handleInput(ev) {
-    /* console.log(ev.target.name); */
+    console.log(this.props);
 
     const inputValue = ev.target.value;
     const inputName = ev.target.name;

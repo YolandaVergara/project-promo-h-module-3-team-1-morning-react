@@ -30,10 +30,14 @@ class CollapsibleContainer extends React.Component {
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
                 <FormFill
+                  handleInput={this.props.handleInput}
                   handleImage={this.props.handleImage}
                   file={this.props.file}
                 />
-                < span className="legend" > Los campos señalados con * son obligatorios</span>
+                <span className="legend">
+                  {" "}
+                  Los campos señalados con * son obligatorios
+                </span>
               </div>
             </fieldset>
           </form>
