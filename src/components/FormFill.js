@@ -1,8 +1,7 @@
-import React from 'react';
-import FormText from './FormText';
-import dataFields from './data/dataFields.json';
-import FormImage from './FormImage';
-
+import React from "react";
+import FormText from "./FormText";
+import dataFields from "./data/dataFields.json";
+import FormImage from "./FormImage";
 
 class FormFill extends React.Component {
   constructor(props) {
@@ -22,6 +21,7 @@ class FormFill extends React.Component {
             placeholder={dataField.placeholder}
             maxlenght={dataField.maxlenght}
             title={dataField.title}
+            handleInput={this.props.handleInput}
           />
           );
         } else {
@@ -41,4 +41,4 @@ class FormFill extends React.Component {
   }
 }
 
-export default FormFill;    
+export default FormFill;
