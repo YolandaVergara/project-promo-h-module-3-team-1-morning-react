@@ -14,27 +14,31 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
-    };
-    this.handleInput = this.handleInput.bind(this);
+      file: ""
+    }
+    this.handleImage = this.handleImage.bind(this);
   }
 
-  handleInput(data) {
-    console.log(data);
-
-    /* this.setState = {
-      value: ev.target.value
-    }; */
+  handleImage(file) {
+    console.log(file)
+    this.setState(
+      {
+        file: file
+      }
+    );
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
         <Header />
 
         <main className="cards">
-          <Card />
-          <CollapsibleContainer handleInput={this.handleInput} />
+          <Card file={this.state.file} />
+          <CollapsibleContainer 
+            handleImage={this.handleImage}
+            file={this.state.file}
+          />
         </main>
 
         <Footer />
