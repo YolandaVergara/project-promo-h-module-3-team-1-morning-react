@@ -23,6 +23,7 @@ class App extends React.Component {
       github: ""
     };
     this.handleInput = this.handleInput.bind(this);
+    this.handleImage = this.handleImage.bind(this);
   }
 
   handleInput(data) {
@@ -36,14 +37,25 @@ class App extends React.Component {
     }
   }
 
+  handleImage(file) {
+    console.log(file);
+    this.setState({
+      file: file
+    });
+  }
+
   render() {
     return (
       <div className="App">
         <Header />
 
         <main className="cards">
-          <Card info={this.state} />
-          <CollapsibleContainer handleInput={this.handleInput} />
+          <Card info={this.state} file={this.state.file} />
+          <CollapsibleContainer
+            handleInput={this.handleInput}
+            handleImage={this.handleImage}
+            file={this.state.file}
+          />
         </main>
 
         <Footer />

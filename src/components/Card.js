@@ -1,6 +1,6 @@
 import React from "react";
 import Icons from "./Icons";
-
+import placeholderImage from "../images/paquita.jpg";
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
@@ -31,8 +31,8 @@ function Card(props) {
           className="card-photo__card__image js-image-profile"
           alt="Avatar"
           title="Imagen del usuario"
+          style={{ backgroundImage: `url(${props.file || placeholderImage})` }}
         ></div>
-
         <div>
           <ul className="card-photo__card__links">
             <Icons info={props.info} />
