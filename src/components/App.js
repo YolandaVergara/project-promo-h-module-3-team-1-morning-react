@@ -21,24 +21,14 @@ class App extends React.Component {
       github: ""
     };
     this.handleInput = this.handleInput.bind(this);
-    this.handleImage = this.handleImage.bind(this);
   }
 
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
 
-    if (value !== "") {
-      this.setState({
-        [name]: value
-      });
-    }
-  }
-
-  handleImage(file) {
-    console.log(file);
     this.setState({
-      file: file
+      [name]: value
     });
   }
 
@@ -48,10 +38,9 @@ class App extends React.Component {
         <Header />
 
         <main className="cards">
-          <Card info={this.state} file={this.state.file} />
+          <Card info={this.state} file={this.state.file} iconClassFilter={this.state.iconClassFilter} iconClass={this.state.iconClass} />
           <CollapsibleContainer
             handleInput={this.handleInput}
-            handleImage={this.handleImage}
             file={this.state.file}
           />
         </main>

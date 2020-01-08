@@ -31,7 +31,6 @@ class CollapsibleContainer extends React.Component {
               <div className="form-fill__content collapsable--content">
                 <FormFill
                   handleInput={this.props.handleInput}
-                  handleImage={this.props.handleImage}
                   file={this.props.file}
                 />
                 <span className="legend">

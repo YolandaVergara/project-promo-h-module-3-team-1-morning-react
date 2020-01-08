@@ -12,6 +12,7 @@ class Icons extends React.Component {
         <Icon
           key={key}
           href={this.props.info[dataIcon.name]}
+          prefix={dataIcon.prefix}
           className={dataIcon.className}
           title={dataIcon.title}
           target={dataIcon.target}
