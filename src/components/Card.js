@@ -1,15 +1,20 @@
 import React from "react";
 import Icons from "./Icons";
+import placeholderImage from "../images/paquita.jpg";
+
 
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
-import CollapsibleContainer from "./CollapsibleContainer";
+
 
 function Card(props) {
+
+
   return (
     <section className="card-photo">
       <div className="card-photo__button">
-        <button type="button" className="card-photo__button__reset icon-reset js-reset-button" title="Reset">
+        <button
+          type="button" className="card-photo__button__reset icon-reset js-reset-button" title="Reset">
           Reset
           </button>
       </div>
@@ -20,7 +25,16 @@ function Card(props) {
           <h3 className="card-photo__card__info__job js-card-job">Profesión</h3>
         </div>
 
-        <div className="card-photo__card__image js-image-profile" alt="Avatar" title="Imagen del usuario"></div>
+        <div className="card-photo__card__image js-image-profile"
+          alt="Avatar"
+          title="Imagen del usuario"
+          style={{ backgroundImage: `url(${props.file || placeholderImage})` }}
+
+        >
+
+        </div>
+
+
 
         <div>
           <ul className="card-photo__card__links">
@@ -28,8 +42,9 @@ function Card(props) {
           </ul>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
+
 
 export default Card;

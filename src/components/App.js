@@ -10,19 +10,41 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      file: ""
+    }
+    this.handleImage = this.handleImage.bind(this);
+  }
 
-      <main className="cards">
-        <Card />
-        <CollapsibleContainer />
-      </main>
+  handleImage(file) {
+    console.log(file)
+    this.setState(
+      {
+        file: file
+      }
+    );
+  }
 
-      <Footer />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App" >
+        <Header />
+
+        <main className="cards">
+          <Card file={this.state.file} />
+          <CollapsibleContainer 
+            handleImage={this.handleImage}
+            file={this.state.file}
+          />
+        </main>
+
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
