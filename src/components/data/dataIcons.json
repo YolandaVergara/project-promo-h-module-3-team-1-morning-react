@@ -1,24 +1,34 @@
-[{
+[
+  {
     "href": "#",
-    "className": "icon-tel js-card-tel",
+    "className": "icon-tel",
     "title": "Teléfono",
-    "target": "_blank"
-}, 
-{
+    "target": "_blank",
+    "name": "phone",
+    "prefix": "tel:"
+  },
+  {
     "href": "#",
-    "className": "icon-mail js-card-email",
+    "className": "icon-mail",
     "title": "Email",
-    "target": "_blank"
-}, 
-{
+    "target": "_blank",
+    "name": "email",
+    "prefix": "mailto:"
+  },
+  {
     "href": "#",
-    "className": "icon-linkedin js-card-linkedin",
+    "className": "icon-linkedin",
     "title": "Linkedin",
-    "target": "_blank"
-},
-{
+    "target": "_blank",
+    "name": "linkedin",
+    "prefix": "https://www.linkedin.com/in/"
+  },
+  {
     "href": "#",
-    "className": "icon-github js-card-github",
+    "className": "icon-github",
     "title": "GitHub",
-    "target": "_blank"
-} ]
+    "target": "_blank",
+    "name": "github",
+    "prefix": "https://www.github.com/"
+  }
+]

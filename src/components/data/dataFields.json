@@ -1,73 +1,75 @@
-[{
-        "htmlFor": "form-name",
-        "label": "Nombre completo",
-        "type": "text",
-        "id": "form-name",
-        "name": "name",
-        "placeholder": "Ej:Paquita Salas",
-        "maxlenght": 30,
-        "title": "Introduce entre 2 y 30 letras",
-        "component": "FormText"
-    },
-    {
-        "htmlFor": "form-job",
-        "label": "Puesto",
-        "type": "text",
-        "id": "form-job",
-        "name": "job",
-        "placeholder": "Ej:Representante de artistas",
-        "maxlenght": 30,
-        "title": "Introduce entre 2 y 30 letras",
-        "component": "FormText"
-    },
-    {
-        "classLabel": "form-fill__label",
-        "htmlFor": "form-photo",
-        "label": "Imagen de perfil",
-        "type": "file",
-        "id": "form-photo",
-        "name": "photo",
-        "component": "FormImage"
-    },
-    {
-        "htmlFor": "form-phone",
-        "label": "Teléfono",
-        "type": "tel",
-        "id": "form-phone",
-        "name": "phone",
-        "placeholder": "Ej: 666778899",
-        "maxlenght": 30,
-        "title": "Número de 9 cifras",
-        "component": "FormText"
-    },
-    {
-        "htmlFor": "form-email",
-        "label": "Email",
-        "type": "email",
-        "id": "form-email",
-        "name": "email",
-        "placeholder": "Ej: psmanagement@gmail.com",
-        "title": "email@paquitasalas.es",
-        "component": "FormText"
-    },
-    {
-        "htmlFor": "form-linkedin",
-        "label": "Linkedin",
-        "type": "text",
-        "id": "form-linkedin",
-        "name": "linkedin",
-        "placeholder": "Ej: paquitasalas",
-        "title": "paquitasalas",
-        "component": "FormText"
-    },
-    {
-        "htmlFor": "form-github",
-        "label": "Github",
-        "type": "text",
-        "id": "form-github",
-        "name": "github",
-        "placeholder": "Ej: paquitasalas",
-        "title": "paquitasalas",
-        "component": "FormText"
-    }
+[
+  {
+    "htmlFor": "form-name",
+    "label": "Nombre completo",
+    "type": "text",
+    "id": "form-name",
+    "name": "name",
+    "placeholder": "Ej:Paquita Salas",
+    "maxlenght": 30,
+    "title": "Introduce entre 2 y 30 letras",
+    "component": "FormText"
+  },
+  {
+    "htmlFor": "form-job",
+    "label": "Puesto",
+    "type": "text",
+    "id": "form-job",
+    "name": "job",
+    "placeholder": "Ej:Representante de artistas",
+    "maxlenght": 30,
+    "title": "Introduce entre 2 y 30 letras",
+    "component": "FormText"
+  },
+  {
+    "classLabel": "form-fill__label",
+    "htmlFor": "form-photo",
+    "label": "Imagen de perfil",
+    "type": "file",
+    "id": "form-photo",
+    "name": "photo",
+    "value": "",
+    "component": "FormImage"
+  },
+  {
+    "htmlFor": "form-phone",
+    "label": "Teléfono",
+    "type": "tel",
+    "id": "form-phone",
+    "name": "phone",
+    "placeholder": "Ej: 666778899",
+    "maxlenght": 30,
+    "title": "Número de 9 cifras",
+    "component": "FormText"
+  },
+  {
+    "htmlFor": "form-email",
+    "label": "Email",
+    "type": "email",
+    "id": "form-email",
+    "name": "email",
+    "placeholder": "Ej: psmanagement@gmail.com",
+    "title": "email@paquitasalas.es",
+    "component": "FormText"
+  },
+  {
+    "htmlFor": "form-linkedin",
+    "label": "Linkedin",
+    "type": "text",
+    "id": "form-linkedin",
+    "name": "linkedin",
+    "placeholder": "Ej: paquitasalas",
+    "title": "paquitasalas",
+    "component": "FormText"
+  },
+  {
+    "htmlFor": "form-github",
+    "label": "Github",
+    "type": "text",
+    "id": "form-github",
+    "name": "github",
+    "placeholder": "Ej: paquitasalas",
+    "title": "paquitasalas",
+    "component": "FormText"
+  }
 ]
