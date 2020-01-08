@@ -1,10 +1,8 @@
 import React from "react";
-
 import "../stylesheets/App.scss";
 import "../stylesheets/layout/design.scss";
 import "../stylesheets/layout/fill.scss";
 import "../stylesheets/layout/share.scss";
-
 import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
@@ -14,30 +12,52 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      file: ""
-    }
-    this.handleImage = this.handleImage.bind(this);
+      paletteChecked: 1,
+      name: "",
+      job: "",
+      file: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: ""
+    };
+    this.handleInput = this.handleInput.bind(this);
+    this.handlePalette = this.handlePalette.bind(this);
   }
 
-  handleImage(file) {
-    console.log(file)
-    this.setState(
-      {
-        file: file
-      }
-    );
+  handleInput(data) {
+    const name = data.inputName;
+    const value = data.inputValue;
+
+
+
+    this.setState({
+      [name]: value,
+
+    });
   }
 
+  handlePalette(paletteChecked) {
+    this.setState({
+      paletteChecked: paletteChecked
+    })
+  }
   render() {
     return (
-      <div className="App" >
+      <div className="App">
         <Header />
 
         <main className="cards">
-          <Card file={this.state.file} />
-          <CollapsibleContainer 
-            handleImage={this.handleImage}
+          <Card
+            info={this.state}
             file={this.state.file}
+
+          />
+          <CollapsibleContainer
+            handleInput={this.handleInput}
+            handlePalette={this.handlePalette}
+            file={this.state.file}
+
           />
         </main>
 

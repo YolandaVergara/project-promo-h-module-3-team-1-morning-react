@@ -32,7 +32,7 @@ class FormFill extends React.Component {
             type={dataField.type}
             id={dataField.id}
             name={dataField.name}
-            handleImage={this.props.handleImage}
+            handleInput={this.props.handleInput}
             file={this.props.file}
           />
           )

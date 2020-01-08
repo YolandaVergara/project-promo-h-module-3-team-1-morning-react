@@ -9,13 +9,17 @@ class CollapsibleContainer extends React.Component {
   }
 
   render() {
+
     return (
       <React.Fragment>
         <Collapsible icon="icons-1" title="Diseña">
           <div className="design__form">
             <h5 className="design__form--title">colores</h5>
             <form className="form__palette" id="js-form-design">
-              <PalettesList />
+              <PalettesList
+                handlePalette={this.props.handlePalette}
+
+              />
             </form>
           </div>
         </Collapsible>
@@ -30,10 +34,13 @@ class CollapsibleContainer extends React.Component {
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
                 <FormFill
-                  handleImage={this.props.handleImage}
+                  handleInput={this.props.handleInput}
                   file={this.props.file}
                 />
-                < span className="legend" > Los campos señalados con * son obligatorios</span>
+                <span className="legend">
+                  {" "}
+                  Los campos señalados con * son obligatorios
+                </span>
               </div>
             </fieldset>
           </form>

@@ -4,15 +4,17 @@ import PropTypes from "prop-types";
 class FormText extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      value: ""
-    };
     this.handleInput = this.handleInput.bind(this);
   }
 
   handleInput(ev) {
+    console.log(this.props);
+
+    const inputValue = ev.target.value;
+    const inputName = ev.target.name;
     this.props.handleInput({
-      inputValue: ev.target.value
+      inputValue: inputValue,
+      inputName: inputName
     });
   }
 
