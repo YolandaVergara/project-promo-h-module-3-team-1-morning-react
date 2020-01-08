@@ -22,6 +22,7 @@ class App extends React.Component {
       github: ""
     };
     this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput(data) {
@@ -31,6 +32,11 @@ class App extends React.Component {
     this.setState({
       [name]: value
     });
+  }
+
+  handleSubmit(ev) {
+    console.log(ev);
+
   }
 
   render() {
@@ -43,6 +49,7 @@ class App extends React.Component {
           <CollapsibleContainer
             handleInput={this.handleInput}
             file={this.state.file}
+          /* handleSubmit={this.handleSubmit} */
           />
         </main>
 
