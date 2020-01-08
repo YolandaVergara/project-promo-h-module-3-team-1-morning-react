@@ -23,6 +23,21 @@ class App extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleReset(ev){
+    ev.preventDefault();
+    this.setState ( {
+      paletteChecked: 1,
+      name: "",
+      job: "",
+      file: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: ""
+    });
   }
 
   handleInput(data) {
@@ -43,6 +58,7 @@ class App extends React.Component {
     })
   }
   render() {
+    
     return (
       <div className="App">
         <Header />
@@ -51,6 +67,7 @@ class App extends React.Component {
           <Card
             info={this.state}
             file={this.state.file}
+            handleReset={this.handleReset}
 
           />
           <CollapsibleContainer
