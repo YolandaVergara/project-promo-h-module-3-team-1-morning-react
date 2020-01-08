@@ -1,12 +1,41 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 class Palette extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handlePalette = this.handlePalette.bind(this);
+  }
+
+
+
+  handlePalette(ev) {
+    let paletteChecked = ev.target.value;
+    this.props.handlePalette(paletteChecked);
+
+    console.log(paletteChecked)
+
+  }
+
   render() {
+
+
     return (
       <React.Fragment>
         <div className="form__palette--1">
-          <label className="label" htmlFor={this.props.htmlFor}></label>
-          <input value={this.props.value} type={this.props.type} name={this.props.name} id={this.props.id} className="design__form--radio js-form-palette1" defaultChecked={this.props.defaultChecked} />
+          <label className="label" htmlFor={this.props.id}></label>
+          <input
+            value={this.props.value}
+            type={this.props.type}
+            name={this.props.name}
+            id={this.props.id}
+            className="design__form--radio js-form-palette1"
+            defaultChecked={this.props.defaultChecked}
+            onChange={this.handlePalette}
+
+
+          />
           <ul className="palette-color">
             <li className={this.props.color1}></li>
             <li className={this.props.color2}></li>
@@ -17,5 +46,17 @@ class Palette extends React.Component {
     );
   }
 }
+
+
+Palette.propTypes = {
+  value: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  id: PropTypes.string,
+  defaultChecked: PropTypes.string,
+  color1: PropTypes.string,
+  color2: PropTypes.string,
+  color3: PropTypes.string
+};
 
 export default Palette;
