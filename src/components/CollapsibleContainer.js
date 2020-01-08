@@ -2,6 +2,7 @@ import React from "react";
 import PalettesList from "./PalettesList";
 import FormFill from "./FormFill";
 import Collapsible from "./Collapsible";
+import ShareButton from './ShareButton';
 
 class CollapsibleContainer extends React.Component {
   constructor(props) {
@@ -34,7 +35,6 @@ class CollapsibleContainer extends React.Component {
                   file={this.props.file}
                 />
                 <span className="legend">
-                  {" "}
                   Los campos señalados con * son obligatorios
                 </span>
               </div>
@@ -45,12 +45,7 @@ class CollapsibleContainer extends React.Component {
         <Collapsible icon="icons-3" title="Comparte">
           <section className="share__container js-collapsable collapsable-open">
             <div className="share__card collapsable--content">
-              <button
-                className="share__card__button-create icon-card button--filter js-share-button"
-                title="Crea tu tarjeta"
-              >
-                Crear tarjeta
-              </button>
+              <ShareButton />
               <div className="share__notification js-share--url share--url">
                 <h4 className="notification__title">
                   La tarjeta ha sido creada:
