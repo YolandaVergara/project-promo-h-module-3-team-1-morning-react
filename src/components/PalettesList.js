@@ -16,6 +16,8 @@ class PalettesList extends React.Component {
           color1={dataPalette.colors.color1}
           color2={dataPalette.colors.color2}
           color3={dataPalette.colors.color3}
+          handlePalette={this.props.handlePalette}
+
         />
       );
     });

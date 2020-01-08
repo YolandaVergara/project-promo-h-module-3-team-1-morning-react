@@ -17,7 +17,7 @@ function Card(props) {
         </button>
       </div>
 
-      <div className="card-photo__card js-card card-palette1">
+      <div className={`card-photo__card js-card card-palette${props.info.paletteChecked}`}>
         <div className="card-photo__card__info border-info">
           <h2 className="card-photo__card__info__name js-card-name card-name">
             {props.info.name || "Nombre Apellido"}

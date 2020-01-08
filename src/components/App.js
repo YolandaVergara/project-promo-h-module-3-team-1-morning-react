@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      paletteChecked: 1,
       name: "",
       job: "",
       file: "",
@@ -21,27 +22,42 @@ class App extends React.Component {
       github: ""
     };
     this.handleInput = this.handleInput.bind(this);
+    this.handlePalette = this.handlePalette.bind(this);
   }
 
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
 
+
+
     this.setState({
-      [name]: value
+      [name]: value,
+
     });
   }
 
+  handlePalette(paletteChecked) {
+    this.setState({
+      paletteChecked: paletteChecked
+    })
+  }
   render() {
     return (
       <div className="App">
         <Header />
 
         <main className="cards">
-          <Card info={this.state} file={this.state.file} iconClassFilter={this.state.iconClassFilter} iconClass={this.state.iconClass} />
+          <Card
+            info={this.state}
+            file={this.state.file}
+
+          />
           <CollapsibleContainer
             handleInput={this.handleInput}
+            handlePalette={this.handlePalette}
             file={this.state.file}
+
           />
         </main>
 
