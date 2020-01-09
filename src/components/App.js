@@ -20,22 +20,40 @@ class App extends React.Component {
       phone: "",
       email: "",
       linkedin: "",
-      github: ""
+      github: "",
+      isFormValid: false
     };
     this.handleInput = this.handleInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
   }
 
+  validateForm() {
+    const email = this.state.email;
+    const phone = this.state.phone;
+
+    const newState = {
+      ...this.state, phone: phone.match(/^[0-9]{9}/), email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+    };
+
+    if (newState.name && newState.job && newState.file && newState.phone && newState.email && newState.linkedin && newState.github) {
+      this.setState({
+        isFormValid: true
+      })
+    } else {
+      this.setState({
+        isFormValid: false
+      })
+    }
+  };
+
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
-
-
-
-    this.setState({
-      [name]: value,
-
-    });
+    this.setState(
+      { [name]: value },
+      () => {
+        this.validateForm();
+      });
   }
 
   handlePalette(paletteChecked) {
@@ -58,7 +76,8 @@ class App extends React.Component {
             handleInput={this.handleInput}
             handlePalette={this.handlePalette}
             file={this.state.file}
-          /* handleSubmit={this.handleSubmit} */
+            isFormValid={this.state.isFormValid}
+
           />
         </main>
 
