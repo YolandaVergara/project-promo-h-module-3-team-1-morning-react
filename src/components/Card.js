@@ -5,6 +5,11 @@ import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
 function Card(props) {
+  function handleReset(ev) {
+    ev.preventDefault();
+    props.handleReset();
+  }
+
   return (
     <section className="card-photo">
       <div className="card-photo__button">
@@ -12,6 +17,7 @@ function Card(props) {
           type="button"
           className="card-photo__button__reset icon-reset js-reset-button"
           title="Reset"
+          onClick={handleReset}
         >
           Reset
         </button>

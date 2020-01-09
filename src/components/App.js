@@ -8,6 +8,7 @@ import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
+import dataPalettes from "./data/dataPalettes.json";
 
 class App extends React.Component {
   constructor(props) {
@@ -24,7 +25,20 @@ class App extends React.Component {
       isFormValid: false
     };
     this.handleInput = this.handleInput.bind(this);
-    this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleReset() {
+    this.setState({
+      paletteChecked: 1,
+      name: "",
+      job: "",
+      file: "",
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: ""
+    });
   }
 
   validateForm() {
@@ -56,12 +70,8 @@ class App extends React.Component {
       });
   }
 
-  handlePalette(paletteChecked) {
-    this.setState({
-      paletteChecked: paletteChecked
-    })
-  }
   render() {
+
     return (
       <div className="App">
         <Header />
@@ -70,13 +80,14 @@ class App extends React.Component {
           <Card
             info={this.state}
             file={this.state.file}
+            handleReset={this.handleReset}
 
           />
           <CollapsibleContainer
             handleInput={this.handleInput}
-            handlePalette={this.handlePalette}
             file={this.state.file}
             isFormValid={this.state.isFormValid}
+            paletteChecked={this.state.paletteChecked}
 
           />
         </main>

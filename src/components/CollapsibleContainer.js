@@ -23,8 +23,8 @@ class CollapsibleContainer extends React.Component {
             <h5 className="design__form--title">colores</h5>
             <form className="form__palette" id="js-form-design">
               <PalettesList
-                handlePalette={this.props.handlePalette}
-
+                handleInput={this.props.handleInput}
+                paletteChecked={this.props.paletteChecked}
               />
             </form>
           </div>
