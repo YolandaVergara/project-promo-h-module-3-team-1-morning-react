@@ -4,7 +4,10 @@ import placeholderImage from "../images/paquita.jpg";
 import "../stylesheets/pages/card.scss";
 import "../stylesheets/components/cards-photo.scss";
 
+
+
 function Card(props) {
+  console.log(props);
   return (
     <section className="card-photo">
       <div className="card-photo__button">
@@ -12,6 +15,7 @@ function Card(props) {
           type="button"
           className="card-photo__button__reset icon-reset js-reset-button"
           title="Reset"
+          onClick={props.handleReset}
         >
           Reset
         </button>
