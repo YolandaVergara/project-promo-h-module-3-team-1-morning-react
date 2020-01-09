@@ -1,10 +1,9 @@
 import React from "react";
-
 import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
-
+import { fetchCard } from '../services/FetchCard';
 
 class Main extends React.Component {
     constructor(props) {
@@ -17,7 +16,8 @@ class Main extends React.Component {
             phone: "",
             email: "",
             linkedin: "",
-            github: ""
+            github: "",
+            isFormValid: false
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleReset = this.handleReset.bind(this);
@@ -35,13 +35,34 @@ class Main extends React.Component {
             github: ""
         });
     }
+    validateForm() {
+        const email = this.state.email;
+        const phone = this.state.phone;
+    
+        const newState = {
+          ...this.state, phone: phone.match(/^[0-9]{9}/), email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+        };
+    
+        if (newState.name && newState.job && newState.file && newState.phone && newState.email && newState.linkedin && newState.github) {
+          this.setState({
+            isFormValid: true
+          })
+        } else {
+          this.setState({
+            isFormValid: false
+          })
+        }
+      };
+    
 
     handleInput(data) {
         const name = data.inputName;
         const value = data.inputValue;
-        this.setState({
-            [name]: value
-        });
+        this.setState(
+            { [name]: value },
+            () => {
+              this.validateForm();
+            });
     }
 
     render() {

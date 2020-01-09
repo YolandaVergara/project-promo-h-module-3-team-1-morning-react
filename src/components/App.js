@@ -7,7 +7,6 @@ import "../stylesheets/layout/design.scss";
 import "../stylesheets/layout/fill.scss";
 import "../stylesheets/layout/share.scss";
 
-
 function App () {
 
     return (
