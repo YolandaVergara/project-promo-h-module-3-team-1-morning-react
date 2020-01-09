@@ -8,10 +8,11 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    const LSData = localStorage.get("Data", {
       paletteChecked: 1,
       name: "",
       job: "",
@@ -20,15 +21,30 @@ class App extends React.Component {
       email: "",
       linkedin: "",
       github: ""
-    };
+    });
+    this.state = LSData;
     this.handleInput = this.handleInput.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
 
-  handleReset(ev){
+  // componentDidUpdate() {
+  //   localStorage.setItem('Data', JSON.stringify(this.state));
+  // }
+
+  // componentDidMount() {
+  //   const cardLS = localStorage.getItem('card');
+  //   if (cardLS) {
+  //     this.setState({
+  //        JSON.parse(cardLS)
+  //     })
+  //   };
+  // }
+
+
+  handleReset(ev) {
     ev.preventDefault();
-    this.setState ( {
+    this.setState({
       paletteChecked: 1,
       name: "",
       job: "",
@@ -58,7 +74,7 @@ class App extends React.Component {
     })
   }
   render() {
-    
+
     return (
       <div className="App">
         <Header />

@@ -1,5 +1,4 @@
 import React from 'react';
-import placeholderImage from "../images/paquita.jpg";
 
 
 class FormImage extends React.Component {
