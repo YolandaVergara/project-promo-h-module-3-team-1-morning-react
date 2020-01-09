@@ -81,6 +81,7 @@ class Main extends React.Component {
                     <CollapsibleContainer
                         handleInput={this.handleInput}
                         file={this.state.file}
+                        isFormValid={this.state.isFormValid}
                         paletteChecked={this.state.paletteChecked}
 
                     />
