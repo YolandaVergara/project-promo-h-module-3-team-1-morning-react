@@ -26,9 +26,8 @@ class App extends React.Component {
     this.handleReset = this.handleReset.bind(this);
   }
 
-  handleReset(ev){
-    ev.preventDefault();
-    this.setState ( {
+  handleReset() {
+    this.setState({
       paletteChecked: 1,
       name: "",
       job: "",
@@ -58,7 +57,7 @@ class App extends React.Component {
     })
   }
   render() {
-    
+
     return (
       <div className="App">
         <Header />
