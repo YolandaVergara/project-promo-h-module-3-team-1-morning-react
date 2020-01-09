@@ -29,6 +29,7 @@
     "id": "form-photo",
     "name": "photo",
     "value": "",
+    "accept": "image/*",
     "component": "FormImage"
   },
   {
