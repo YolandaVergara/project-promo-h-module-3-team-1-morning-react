@@ -7,6 +7,7 @@ import Header from "./Header";
 import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
+import dataPalettes from "./data/dataPalettes.json";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,7 +23,6 @@ class App extends React.Component {
       github: ""
     };
     this.handleInput = this.handleInput.bind(this);
-    this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
   }
 
@@ -42,20 +42,11 @@ class App extends React.Component {
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
-
-
-
     this.setState({
-      [name]: value,
-
+      [name]: value
     });
   }
 
-  handlePalette(paletteChecked) {
-    this.setState({
-      paletteChecked: paletteChecked
-    })
-  }
   render() {
 
     return (
@@ -71,8 +62,8 @@ class App extends React.Component {
           />
           <CollapsibleContainer
             handleInput={this.handleInput}
-            handlePalette={this.handlePalette}
             file={this.state.file}
+            paletteChecked={this.state.paletteChecked}
 
           />
         </main>
