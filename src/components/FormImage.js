@@ -1,4 +1,5 @@
 import React from 'react';
+import placeholderImage from "../images/paquita.jpg";
 
 
 class FormImage extends React.Component {
@@ -42,6 +43,7 @@ class FormImage extends React.Component {
             name={this.props.name}
             ref={this.fileInput}
             value={this.props.value}
+            accept={this.props.accept}
             onChange={this.handleImage}
 
 

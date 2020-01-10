@@ -5,21 +5,18 @@ import PropTypes from "prop-types";
 class Palette extends React.Component {
   constructor(props) {
     super(props);
-    this.handlePalette = this.handlePalette.bind(this);
+    this.handleInput = this.handleInput.bind(this);
   }
 
-
-
-  handlePalette(ev) {
+  handleInput(ev) {
     let paletteChecked = ev.target.value;
-    this.props.handlePalette(paletteChecked);
-
-    console.log(paletteChecked)
-
+    this.props.handleInput({
+      inputValue: paletteChecked,
+      inputName: 'paletteChecked'
+    })
   }
-
   render() {
-
+    console.log(this.props.checked);
 
     return (
       <React.Fragment>
@@ -31,8 +28,8 @@ class Palette extends React.Component {
             name={this.props.name}
             id={this.props.id}
             className="design__form--radio js-form-palette1"
-            defaultChecked={this.props.defaultChecked}
-            onChange={this.handlePalette}
+            checked={this.props.checked}
+            onChange={this.handleInput}
 
 
           />
