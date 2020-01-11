@@ -17,7 +17,10 @@ class Main extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      isFormValid: false
+      isFormValid: false,
+      URL: "",
+      isLoading: false,
+      cardSuccess: ""
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -74,11 +77,26 @@ class Main extends React.Component {
   fetchCard() {
     const JSON = JSON.parse(localStorage.getItem("data"));
     fetchCard(JSON)
-      .then(result => this.setURL(result))
+      .then(result => this.createURL(result))
       .catch(error => console.log(error));
-    /* this.setState({
-        isLoading: true
-    }) */
+    this.setState({
+      isLoading: true
+    });
+  }
+
+  createURL(result) {
+    if (result.success) {
+      this.setState({
+        URL: result.URL,
+        isLoading: false,
+        cardSuccess: true
+      });
+    } else {
+      this.setState({
+        URL: "ERROR:" + result.error,
+        isLoading: false
+      });
+    }
   }
 
   render() {
@@ -98,6 +116,10 @@ class Main extends React.Component {
             isFormValid={this.state.isFormValid}
             paletteChecked={this.state.paletteChecked}
             fetchCard={this.props.fetchCard}
+            //
+            URL={this.state.URL}
+            /* cardSuccess={this.state.cardSuccess}
+            isLoading={this.state.isLoading} */
           />
         </main>
 

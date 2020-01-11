@@ -54,6 +54,10 @@ class CollapsibleContainer extends React.Component {
               <ShareButton
                 isFormValid={this.props.isFormValid}
                 fetchCard={this.props.fetchCard}
+                //
+                URL={this.props.URL}
+                /*  cardSuccess={this.props.cardSuccess}
+                isLoading={this.props.isLoading} */
               />
               <div className="share__notification js-share--url share--url">
                 <h4 className="notification__title">
