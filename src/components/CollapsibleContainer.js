@@ -9,7 +9,6 @@ class CollapsibleContainer extends React.Component {
     super(props);
   }
   render() {
-
     return (
       <React.Fragment>
         <Collapsible icon="icons-1" title="Diseña">
