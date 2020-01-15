@@ -15,7 +15,7 @@ class CollapsibleContainer extends React.Component {
         <Collapsible icon="icons-1" title="Diseña">
           <div className="design__form">
             <h5 className="design__form--title">colores</h5>
-            <form className="form__palette" id="js-form-design">
+            <form className="form__palette" id="js-form-design" method="POST">
               <PalettesList
                 paletteChecked={this.props.info.paletteChecked}
                 handleInput={this.props.handleInput}
@@ -50,7 +50,13 @@ class CollapsibleContainer extends React.Component {
         <Collapsible icon="icons-3" title="Comparte">
           <section className="share__container js-collapsable collapsable-open">
             <div className="share__card collapsable--content">
-              <ShareButton isFormValid={this.props.isFormValid} />
+              <ShareButton
+                isFormValid={this.props.isFormValid}
+                fetchCard={this.props.fetchCard}
+                //
+                URL={this.props.URL}
+                 /*cardSuccess={this.props.cardSuccess}
+          isLoading={this.props.isLoading}*//>
               <div className="share__notification js-share--url share--url">
                 <h4 className="notification__title">
                   La tarjeta ha sido creada:

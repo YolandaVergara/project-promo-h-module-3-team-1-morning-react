@@ -19,7 +19,10 @@ class Main extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      isFormValid: false
+      isFormValid: false,
+      URL: "",
+      isLoading: false,
+      cardSuccess: ""
     });
 
     this.state = localStorageData;
@@ -83,6 +86,34 @@ class Main extends React.Component {
     localStorage.set("userData", this.state);
   }
 
+  // Fetch
+  fetchCard() {
+    const JSON = JSON.parse(localStorage.getItem("data"));
+    fetchCard(JSON)
+      .then(result => this.createURL(result))
+      .catch(error => console.log(error));
+    this.setState({
+      isLoading: true
+    });
+  }
+
+  // Helpers
+
+  createURL(result) {
+    if (result.success) {
+      this.setState({
+        URL: result.URL,
+        isLoading: false,
+        cardSuccess: true
+      });
+    } else {
+      this.setState({
+        URL: "ERROR:" + result.error,
+        isLoading: false
+      });
+    }
+  }
+
   render() {
 
     return (
@@ -101,6 +132,11 @@ class Main extends React.Component {
             info={this.state}
             file={this.state.file}
             isFormValid={this.state.isFormValid}
+            fetchCard={this.props.fetchCard}
+            //
+            URL={this.state.URL}
+          /*cardSuccess={this.state.cardSuccess}
+          isLoading={this.state.isLoading}*/
 
 
           />
