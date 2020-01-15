@@ -7,11 +7,7 @@ import ShareButton from "./ShareButton";
 class CollapsibleContainer extends React.Component {
   constructor(props) {
     super(props);
-
-
   }
-
-
   render() {
 
     return (
@@ -34,7 +30,6 @@ class CollapsibleContainer extends React.Component {
             method=""
             id="js-form-fill"
             className="js-form collapsable-open"
-
           >
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
