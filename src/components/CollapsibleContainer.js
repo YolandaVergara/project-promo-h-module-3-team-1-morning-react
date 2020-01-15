@@ -16,7 +16,7 @@ class CollapsibleContainer extends React.Component {
           title="Diseña">
           <div className="design__form">
             <h5 className="design__form--title">colores</h5>
-            <form className="form__palette" id="js-form-design" method="POST">
+            <form className="form__palette" id="form-design" method="POST">
               <PalettesList
                 paletteChecked={this.props.info.paletteChecked}
                 handleInput={this.props.handleInput}
@@ -32,8 +32,8 @@ class CollapsibleContainer extends React.Component {
           <form
             action=""
             method=""
-            id="js-form-fill"
-            className="js-form collapsable-open"
+            id="form-fill"
+            className=" collapsable-open"
           >
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
@@ -56,7 +56,7 @@ class CollapsibleContainer extends React.Component {
           icon="icons-3"
           title="Comparte"
         >
-          <section className="share__container js-collapsable collapsable-open">
+          <section className="share__container collapsable-open">
             <div className="share__card collapsable--content">
               <ShareButton
                 isFormValid={this.props.isFormValid}
@@ -65,16 +65,16 @@ class CollapsibleContainer extends React.Component {
                 URL={this.props.URL}
                  /*cardSuccess={this.props.cardSuccess}
           isLoading={this.props.isLoading}*//>
-              <div className="share__notification js-share--url share--url">
+              <div className="share__notification share--url">
                 <h4 className="notification__title">
                   La tarjeta ha sido creada:
                 </h4>
                 <p
-                  className="notification__link js-notification-link"
+                  className="notification__link "
                   title="Comparte tu tarjeta con este link"
                 ></p>
                 <a
-                  className="notification__button-tw js__button-Twitter icon-tw"
+                  className="notification__button-tw icon-tw"
                   href=""
                   title="Comparte tu tarjeta a través de twitter"
                   target="_blank"
