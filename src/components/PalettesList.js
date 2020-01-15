@@ -15,12 +15,12 @@ class PalettesList extends React.Component {
           type={dataPalette.type}
           name={dataPalette.name}
           id={dataPalette.id}
-          checked={dataPalette.value === this.props.paletteChecked}
+          checked={dataPalette.value === this.props.palette}
           color1={dataPalette.colors.color1}
           color2={dataPalette.colors.color2}
           color3={dataPalette.colors.color3}
           handleInput={this.props.handleInput}
-          paletteChecked={this.props.paletteChecked}
+          palette={this.props.palette}
         />
       );
     });

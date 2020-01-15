@@ -23,7 +23,9 @@ function Card(props) {
         </button>
       </div>
 
-      <div className={`card-photo__card js-card card-palette${props.info.paletteChecked}`}>
+      <div
+        className={`card-photo__card js-card card-palette${props.info.palette}`}
+      >
         <div className="card-photo__card__info border-info">
           <h2 className="card-photo__card__info__name js-card-name card-name">
             {props.info.name || "Nombre Apellido"}
@@ -34,10 +36,10 @@ function Card(props) {
         </div>
 
         <div
-          className="card-photo__card__image js-image-profile"
+          className="card-photo__card__image js-image-pro"
           alt="Avatar"
           title="Imagen del usuario"
-          style={{ backgroundImage: `url(${props.file || placeholderImage})` }}
+          style={{ backgroundImage: `url(${props.photo || placeholderImage})` }}
         ></div>
         <div>
           <ul className="card-photo__card__links">

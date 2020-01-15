@@ -4,17 +4,16 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 import localStorage from "../localStorage/localStorage";
-import { fetchCard } from '../services/FetchCard';
+import createFetchCard from "../services/createFetchCard";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     const localStorageData = localStorage.get("userData", {
-
-      paletteChecked: '1',
+      palette: "1",
       name: "",
       job: "",
-      file: "",
+      photo: "",
       phone: "",
       email: "",
       linkedin: "",
@@ -28,16 +27,17 @@ class Main extends React.Component {
     this.state = localStorageData;
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.createFetchCard = this.createFetchCard.bind(this);
   }
 
   // Botón Reset
 
   handleReset() {
     this.setState({
-      paletteChecked: '1',
+      palette: "1",
       name: "",
       job: "",
-      file: "",
+      photo: "",
       phone: "",
       email: "",
       linkedin: "",
@@ -52,32 +52,38 @@ class Main extends React.Component {
     const phone = this.state.phone;
 
     const newState = {
-      ...this.state, phone: phone.match(/^[0-9]{9}/), email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+      ...this.state,
+      phone: phone.match(/^[0-9]{9}/),
+      email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     };
 
     if (
-      newState.name && newState.job && newState.file && newState.phone && newState.email && newState.linkedin && newState.github) {
+      newState.name &&
+      newState.job &&
+      newState.photo &&
+      newState.phone &&
+      newState.email &&
+      newState.linkedin &&
+      newState.github
+    ) {
       this.setState({
         isFormValid: true
-      })
+      });
     } else {
       this.setState({
         isFormValid: false
-      })
+      });
     }
-  };
-
+  }
 
   // Manejo de inputs, paletas e imagen
 
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
-    this.setState(
-      { [name]: value },
-      () => {
-        this.validateForm();
-      });
+    this.setState({ [name]: value }, () => {
+      this.validateForm();
+    });
   }
 
   // Local Storage
@@ -87,34 +93,24 @@ class Main extends React.Component {
   }
 
   // Fetch
-  fetchCard() {
-    const JSON = JSON.parse(localStorage.getItem("data"));
-    fetchCard(JSON)
-      .then(result => this.createURL(result))
-      .catch(error => console.log(error));
+
+  showURL(result) {
+    console.log(result);
+  }
+
+  createFetchCard(data) {
+    console.log(data);
+
+    const getData = createFetchCard(this.state);
+    console.log(getData);
+
     this.setState({
-      isLoading: true
+      URL: getData
     });
   }
 
-  // Helpers
-
-  createURL(result) {
-    if (result.success) {
-      this.setState({
-        URL: result.URL,
-        isLoading: false,
-        cardSuccess: true
-      });
-    } else {
-      this.setState({
-        URL: "ERROR:" + result.error,
-        isLoading: false
-      });
-    }
-  }
-
   render() {
+    console.log(this.state);
 
     return (
       <div className="App">
@@ -123,22 +119,19 @@ class Main extends React.Component {
         <main className="cards">
           <Card
             info={this.state}
-            file={this.state.file}
+            photo={this.state.photo}
             handleReset={this.handleReset}
-
           />
           <CollapsibleContainer
             handleInput={this.handleInput}
             info={this.state}
-            file={this.state.file}
+            photo={this.state.photo}
             isFormValid={this.state.isFormValid}
-            fetchCard={this.props.fetchCard}
+            createFetchCard={this.createFetchCard}
             //
             URL={this.state.URL}
-          /*cardSuccess={this.state.cardSuccess}
-          isLoading={this.state.isLoading}*/
-
-
+            cardSuccess={this.state.cardSuccess}
+            isLoading={this.state.isLoading}
           />
         </main>
 

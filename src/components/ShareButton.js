@@ -1,13 +1,15 @@
 import React from "react";
+import Loader from "./Loader";
 
 class ShareButton extends React.Component {
   constructor(props) {
+    console.log(props);
     super(props);
-    this.fetchCard = this.fetchCard.bind(this);
+    this.createFetchCard = this.createFetchCard.bind(this);
   }
-  fetchCard(ev) {
+  createFetchCard(ev) {
     if (this.props.isFormValid === true) {
-      this.props.fetchCard.bind();
+      this.props.createFetchCard();
     } else {
       ev.preventDefault();
     }
@@ -22,12 +24,13 @@ class ShareButton extends React.Component {
           }`}
           title="Crea tu tarjeta"
           type="submit"
-          onClick={this.fetchCard}
+          onClick={this.createFetchCard}
         >
           Crear tarjeta
         </button>
         {/*  */}
         <div className="share__notification js-share--url">
+          <Loader isLoading={this.props.isLoading} />
           {/* aqui había un <p> con un mensaje de error, luego el Loading y cardSuccess */}
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
           <p

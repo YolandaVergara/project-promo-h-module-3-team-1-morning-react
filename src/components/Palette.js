@@ -8,11 +8,11 @@ class Palette extends React.Component {
   }
 
   handleInput(ev) {
-    let paletteChecked = ev.target.value;
+    let palette = ev.target.value;
     this.props.handleInput({
-      inputValue: paletteChecked,
-      inputName: 'paletteChecked'
-    })
+      inputValue: palette,
+      inputName: "palette"
+    });
   }
   render() {
     return (
@@ -38,7 +38,6 @@ class Palette extends React.Component {
     );
   }
 }
-
 
 Palette.propTypes = {
   value: PropTypes.string,
