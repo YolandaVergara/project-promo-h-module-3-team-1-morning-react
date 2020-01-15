@@ -22,12 +22,14 @@ class Main extends React.Component {
       isFormValid: false,
       URL: "",
       isLoading: false,
-      cardSuccess: ""
+      cardSuccess: "",
+
     });
 
     this.state = localStorageData;
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
+
   }
 
   // Botón Reset
@@ -80,6 +82,9 @@ class Main extends React.Component {
       });
   }
 
+  // Collapsible container
+
+
   // Local Storage
 
   componentDidUpdate() {
@@ -115,6 +120,7 @@ class Main extends React.Component {
   }
 
   render() {
+    console.log(this.state);
 
     return (
       <div className="App">
@@ -128,6 +134,7 @@ class Main extends React.Component {
 
           />
           <CollapsibleContainer
+
             handleInput={this.handleInput}
             info={this.state}
             file={this.state.file}
@@ -135,6 +142,7 @@ class Main extends React.Component {
             fetchCard={this.props.fetchCard}
             //
             URL={this.state.URL}
+
           /*cardSuccess={this.state.cardSuccess}
           isLoading={this.state.isLoading}*/
 

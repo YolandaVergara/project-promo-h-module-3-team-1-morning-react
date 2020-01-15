@@ -11,7 +11,9 @@ class CollapsibleContainer extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Collapsible icon="icons-1" title="Diseña">
+        <Collapsible
+          icon="icons-1"
+          title="Diseña">
           <div className="design__form">
             <h5 className="design__form--title">colores</h5>
             <form className="form__palette" id="js-form-design" method="POST">
@@ -23,7 +25,10 @@ class CollapsibleContainer extends React.Component {
           </div>
         </Collapsible>
 
-        <Collapsible icon="icons-2" title="Rellena">
+        <Collapsible
+          icon="icons-2"
+          title="Rellena"
+        >
           <form
             action=""
             method=""
@@ -46,7 +51,11 @@ class CollapsibleContainer extends React.Component {
           </form>
         </Collapsible>
 
-        <Collapsible icon="icons-3" title="Comparte">
+        <Collapsible
+
+          icon="icons-3"
+          title="Comparte"
+        >
           <section className="share__container js-collapsable collapsable-open">
             <div className="share__card collapsable--content">
               <ShareButton
