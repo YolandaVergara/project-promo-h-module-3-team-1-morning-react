@@ -7,13 +7,7 @@ import ShareButton from "./ShareButton";
 class CollapsibleContainer extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
-
   }
-
-
-
-
   render() {
 
     return (
@@ -23,8 +17,8 @@ class CollapsibleContainer extends React.Component {
             <h5 className="design__form--title">colores</h5>
             <form className="form__palette" id="js-form-design">
               <PalettesList
+                paletteChecked={this.props.info.paletteChecked}
                 handleInput={this.props.handleInput}
-                paletteChecked={this.props.paletteChecked}
               />
             </form>
           </div>
@@ -36,13 +30,14 @@ class CollapsibleContainer extends React.Component {
             method=""
             id="js-form-fill"
             className="js-form collapsable-open"
-          /* onSubmit={this.props.handleSubmit} */
           >
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
                 <FormFill
                   handleInput={this.props.handleInput}
                   file={this.props.file}
+                  info={this.props.info}
+
                 />
                 <span className="legend">
                   Los campos señalados con * son obligatorios

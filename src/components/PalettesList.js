@@ -6,11 +6,8 @@ class PalettesList extends React.Component {
   constructor(props) {
     super(props);
   }
-
   render() {
-    console.log(this.props.handleInput);
     return dataPalettes.map((dataPalette, key) => {
-      
       return (
         <Palette
           key={key}
@@ -18,18 +15,15 @@ class PalettesList extends React.Component {
           type={dataPalette.type}
           name={dataPalette.name}
           id={dataPalette.id}
-          defaultChecked={dataPalette.defaultChecked}
+          checked={dataPalette.value === this.props.paletteChecked}
           color1={dataPalette.colors.color1}
           color2={dataPalette.colors.color2}
           color3={dataPalette.colors.color3}
           handleInput={this.props.handleInput}
           paletteChecked={this.props.paletteChecked}
-
         />
       );
     });
-
   }
 }
-
 export default PalettesList;

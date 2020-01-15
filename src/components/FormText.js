@@ -32,7 +32,9 @@ class FormText extends React.Component {
           placeholder={this.props.placeholder}
           maxlenght={this.props.maxlenght}
           title={this.props.title}
+          value={this.props.value}
           onChange={this.handleInput}
+
         />
       </React.Fragment>
     );

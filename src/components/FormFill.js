@@ -22,6 +22,7 @@ class FormFill extends React.Component {
             maxlenght={dataField.maxlenght}
             title={dataField.title}
             handleInput={this.props.handleInput}
+            value={this.props.info[dataField.name]}
           />
           );
         } else {

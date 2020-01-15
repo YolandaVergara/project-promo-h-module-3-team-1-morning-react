@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 class Palette extends React.Component {
   constructor(props) {
     super(props);
@@ -16,7 +15,6 @@ class Palette extends React.Component {
     })
   }
   render() {
-
     return (
       <React.Fragment>
         <div className="form__palette--1">
@@ -27,11 +25,8 @@ class Palette extends React.Component {
             name={this.props.name}
             id={this.props.id}
             className="design__form--radio js-form-palette1"
-            defaultChecked={this.props.defaultChecked}
-            paletteChecked={this.props.paletteChecked}
+            checked={this.props.checked}
             onChange={this.handleInput}
-
-
           />
           <ul className="palette-color">
             <li className={this.props.color1}></li>
