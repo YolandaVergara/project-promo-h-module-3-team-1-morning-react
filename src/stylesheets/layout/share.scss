@@ -69,15 +69,6 @@
     border-bottom: $colorBorderTop solid 0.1rem;
     margin-bottom: 3rem;
   }
-
-  &--url {
-    display: none;
-  }
-}
-.icon-card:before {
-  content: "\f2bb";
-  font-family: "FontAwesome";
-  margin-right: 0.9rem;
 }
 
 .notification {

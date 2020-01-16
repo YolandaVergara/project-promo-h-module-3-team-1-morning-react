@@ -4,7 +4,6 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 import localStorage from "../localStorage/localStorage";
-import createFetchCard from "../services/createFetchCard";
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,15 +18,15 @@ class Main extends React.Component {
       linkedin: "",
       github: "",
       isFormValid: false,
-      URL: "",
+      url: "",
       isLoading: false,
-      cardSuccess: ""
+      cardSuccess: false
     });
 
     this.state = localStorageData;
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
-    this.createFetchCard = this.createFetchCard.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
   }
 
   // Botón Reset
@@ -93,25 +92,37 @@ class Main extends React.Component {
   }
 
   // Fetch
-
-  showURL(result) {
-    console.log(result);
-  }
-
   createFetchCard(data) {
-    console.log(data);
-
-    const getData = createFetchCard(this.state);
-    console.log(getData);
-
-    this.setState({
-      URL: getData
-    });
+    fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          this.setState({
+            url: result.cardURL,
+            cardSuccess: true,
+            isLoading: false
+          });
+        } else {
+          this.setState({
+            cardURL: "ERROR:" + result.error,
+            isLoading: false
+          });
+        }
+      })
+      .catch(error => console.log(error));
+  }
+  handleFetch() {
+    this.createFetchCard(this.state);
   }
 
   render() {
     console.log(this.state);
-
     return (
       <div className="App">
         <Header />
@@ -127,9 +138,9 @@ class Main extends React.Component {
             info={this.state}
             photo={this.state.photo}
             isFormValid={this.state.isFormValid}
-            createFetchCard={this.createFetchCard}
+            createFetchCard={this.handleFetch}
             //
-            URL={this.state.URL}
+            url={this.state.url}
             cardSuccess={this.state.cardSuccess}
             isLoading={this.state.isLoading}
           />

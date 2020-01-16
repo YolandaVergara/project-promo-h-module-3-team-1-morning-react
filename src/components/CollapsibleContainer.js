@@ -52,27 +52,10 @@ class CollapsibleContainer extends React.Component {
                 isFormValid={this.props.isFormValid}
                 createFetchCard={this.props.createFetchCard}
                 //
-                URL={this.props.URL}
+                url={this.props.url}
                 cardSuccess={this.props.cardSuccess}
                 isLoading={this.props.isLoading}
               />
-              <div className="share__notification js-share--url share--url">
-                <h4 className="notification__title">
-                  La tarjeta ha sido creada:
-                </h4>
-                <p
-                  className="notification__link js-notification-link"
-                  title="Comparte tu tarjeta con este link"
-                ></p>
-                <a
-                  className="notification__button-tw js__button-Twitter icon-tw"
-                  href=""
-                  title="Comparte tu tarjeta a través de twitter"
-                  target="_blank"
-                >
-                  Compartir en twitter
-                </a>
-              </div>
             </div>
           </section>
         </Collapsible>

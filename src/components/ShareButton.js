@@ -5,17 +5,19 @@ class ShareButton extends React.Component {
   constructor(props) {
     console.log(props);
     super(props);
-    this.createFetchCard = this.createFetchCard.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
   }
-  createFetchCard(ev) {
+  handleFetch(ev) {
     if (this.props.isFormValid === true) {
-      this.props.createFetchCard();
+      return this.props.createFetchCard();
     } else {
       ev.preventDefault();
     }
   }
   render() {
+    console.log(this.props);
     const isFormValid = this.props.isFormValid;
+    const cardSuccess = this.props.cardSuccess;
     return (
       <React.Fragment>
         <button
@@ -24,24 +26,28 @@ class ShareButton extends React.Component {
           }`}
           title="Crea tu tarjeta"
           type="submit"
-          onClick={this.createFetchCard}
+          onClick={this.handleFetch}
         >
           Crear tarjeta
         </button>
-        {/*  */}
-        <div className="share__notification js-share--url">
+        <div
+          className={`icon-card ${
+            cardSuccess === false ? "hidden" : "share__notification"
+          }`}
+        >
           <Loader isLoading={this.props.isLoading} />
-          {/* aqui había un <p> con un mensaje de error, luego el Loading y cardSuccess */}
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
-          <p
+          <a
             className="notification__link js-notification-link"
             title="Comparte tu tarjeta con este link"
+            href={this.props.url}
+            target="_blank"
           >
-            {this.props.URL}
-          </p>
+            {this.props.url}
+          </a>
           <a
             className="notification__button-tw js__button-Twitter icon-tw"
-            href={`https://twitter.com/intent/tweet?text=He%20creado%20esta%20tarjeta%20con%20Awesome%20Profile%20Cards:%0A;hashtags=Adalab, AwesomeProfileCards, promoHamilton ${this.props.URL}`}
+            href={`https://twitter.com/intent/tweet?text=He%20creado%20esta%20tarjeta%20con%20Awesome%20Profile%20Cards:%0A;hashtags=Adalab, AwesomeProfileCards, promoHamilton ${this.props.url}`}
             title="Comparte tu tarjeta a través de twitter"
             target="_blank"
           >
