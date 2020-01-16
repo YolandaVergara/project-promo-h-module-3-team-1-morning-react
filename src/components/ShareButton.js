@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Loader from "react-easy-loader";
 import "../stylesheets/layout/loader.scss";
 
@@ -27,7 +28,7 @@ class ShareButton extends React.Component {
         <button
           className={`share__card__button-create icon-card ${
             isFormValid ? "" : "button--filter"
-          }`}
+            }`}
           title="Crea tu tarjeta"
           type="submit"
           onClick={this.handleFetch}
@@ -38,7 +39,7 @@ class ShareButton extends React.Component {
         <div
           className={`icon-card ${
             cardSuccess === false ? "hidden" : "share__notification"
-          }`}
+            }`}
         >
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
           <a
@@ -61,6 +62,14 @@ class ShareButton extends React.Component {
       </React.Fragment>
     );
   }
+}
+
+ShareButton.propTypes = {
+  isFormValid: PropTypes.bool,
+  createFetchCard: PropTypes.func,
+  url: PropTypes.string,
+  cardSuccess: PropTypes.bool,
+  isLoading: PropTypes.bool
 }
 
 export default ShareButton;

@@ -23,7 +23,7 @@ function Icon(props) {
 }
 
 Icon.propTypes = {
-  href: PropTypes.object,
+  href: PropTypes.string,
   prefix: PropTypes.string,
   className: PropTypes.string,
   title: PropTypes.string,

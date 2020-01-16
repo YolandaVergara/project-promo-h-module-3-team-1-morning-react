@@ -1,6 +1,8 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Palette from "./Palette";
 import dataPalettes from "./data/dataPalettes.json";
+import { checkPropTypes } from "prop-types";
 
 class PalettesList extends React.Component {
   constructor(props) {
@@ -26,4 +28,10 @@ class PalettesList extends React.Component {
     });
   }
 }
+
+PalettesList.propTypes = {
+  palette: PropTypes.string,
+  handleInput: PropTypes.func
+}
+
 export default PalettesList;

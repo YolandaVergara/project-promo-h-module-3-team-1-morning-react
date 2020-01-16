@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import PalettesList from "./PalettesList";
 import FormFill from "./FormFill";
 import Collapsible from "./Collapsible";
@@ -63,4 +64,16 @@ class CollapsibleContainer extends React.Component {
     );
   }
 }
+
+CollapsibleContainer.propTypes = {
+  handleInput: PropTypes.func,
+  info: PropTypes.object,
+  photo: PropTypes.string,
+  isFormValid: PropTypes.bool,
+  createFetchCard: PropTypes.func,
+  url: PropTypes.string,
+  cardSuccess: PropTypes.bool,
+  isLoading: PropTypes.bool
+}
+
 export default CollapsibleContainer;

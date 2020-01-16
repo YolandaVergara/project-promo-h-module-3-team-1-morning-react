@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class FormImage extends React.Component {
   constructor(props) {
@@ -57,5 +58,16 @@ class FormImage extends React.Component {
     );
   }
 }
+
+FormImage.propTypes = {
+  htmlFor: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  accept: PropTypes.string,
+  handleInput: PropTypes.func,
+  photo: PropTypes.string
+};
 
 export default FormImage;

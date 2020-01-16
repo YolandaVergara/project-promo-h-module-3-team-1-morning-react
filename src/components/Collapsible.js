@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 class Collapsible extends React.Component {
   constructor(props) {
@@ -34,6 +35,10 @@ class Collapsible extends React.Component {
       </React.Fragment>
     );
   }
+}
+
+Collapsible.propTypes = {
+  onSubmit: PropTypes.func
 }
 
 export default Collapsible;

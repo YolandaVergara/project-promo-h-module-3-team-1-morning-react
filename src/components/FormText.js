@@ -38,15 +38,16 @@ class FormText extends React.Component {
 }
 
 FormText.propTypes = {
-  htmlFor: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  maxlenght: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  component: PropTypes.string.isRequired
+  htmlFor: PropTypes.string,
+  label: PropTypes.string,
+  type: PropTypes.string,
+  id: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  maxlenght: PropTypes.number,
+  title: PropTypes.string,
+  handleInput: PropTypes.func,
+  value: PropTypes.string
 };
 
 export default FormText;

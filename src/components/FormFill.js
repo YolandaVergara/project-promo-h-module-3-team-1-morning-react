@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import FormText from "./FormText";
 import dataFields from "./data/dataFields.json";
 import FormImage from "./FormImage";
@@ -42,6 +43,12 @@ class FormFill extends React.Component {
       }
     });
   }
+}
+
+FormFill.propTypes = {
+  handleInput: PropTypes.func,
+  info: PropTypes.object,
+  photo: PropTypes.string,
 }
 
 export default FormFill;

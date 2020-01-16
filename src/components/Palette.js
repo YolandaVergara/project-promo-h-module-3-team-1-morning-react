@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 class Palette extends React.Component {
   constructor(props) {
@@ -42,10 +42,12 @@ Palette.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
-  defaultChecked: PropTypes.string,
+  checked: PropTypes.bool,
   color1: PropTypes.string,
   color2: PropTypes.string,
-  color3: PropTypes.string
+  color3: PropTypes.string,
+  handleInput: PropTypes.func,
+  palette: PropTypes.string
 };
 
 export default Palette;
