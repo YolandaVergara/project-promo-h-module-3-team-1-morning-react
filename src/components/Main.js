@@ -22,7 +22,6 @@ class Main extends React.Component {
       isLoading: false,
       cardSuccess: false
     });
-
     this.state = localStorageData;
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -30,7 +29,6 @@ class Main extends React.Component {
   }
 
   // Botón Reset
-
   handleReset() {
     this.setState({
       palette: "1",
@@ -49,7 +47,6 @@ class Main extends React.Component {
   }
 
   // Validación del Form
-
   validateForm() {
     const email = this.state.email;
     const phone = this.state.phone;
@@ -59,7 +56,6 @@ class Main extends React.Component {
       phone: phone.match(/^[0-9]{9}/),
       email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     };
-
     if (
       newState.name &&
       newState.job &&
@@ -80,21 +76,15 @@ class Main extends React.Component {
   }
 
   // Manejo de inputs, paletas e imagen
-
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
     this.setState({ [name]: value, cardSuccess: false }, () => {
-      this.validateForm()
-
-
+      this.validateForm();
     });
   }
 
-  // Collapsible container
-
   // Local Storage
-
   componentDidUpdate() {
     localStorage.set("userData", this.state);
   }
@@ -104,7 +94,6 @@ class Main extends React.Component {
     this.setState({
       isLoading: true,
       cardSuccess: false
-
     });
     fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
       method: "POST",
@@ -133,13 +122,10 @@ class Main extends React.Component {
   handleFetch() {
     this.createFetchCard(this.state);
   }
-
   render() {
-    console.log(this.state);
     return (
       <div className="App">
         <Header />
-
         <main className="cards">
           <Card
             info={this.state}
@@ -152,13 +138,11 @@ class Main extends React.Component {
             photo={this.state.photo}
             isFormValid={this.state.isFormValid}
             createFetchCard={this.handleFetch}
-            //
             url={this.state.url}
             cardSuccess={this.state.cardSuccess}
             isLoading={this.state.isLoading}
           />
         </main>
-
         <Footer />
       </div>
     );

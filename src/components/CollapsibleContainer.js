@@ -6,16 +6,13 @@ import ShareButton from "./ShareButton";
 
 class CollapsibleContainer extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
   }
-
   handleSubmit(ev) {
     ev.preventDefault();
   }
   render() {
     return (
-      // <React.Fragment>
       <div className="form">
         <Collapsible icon="icons-1" title="Diseña">
           <div className="design__form">
@@ -28,11 +25,9 @@ class CollapsibleContainer extends React.Component {
             </form>
           </div>
         </Collapsible>
-
         <Collapsible icon="icons-2" title="Rellena">
           <form
-            action=""
-            method=""
+            method="POST"
             id="form-fill"
             className=" collapsable-open"
             onSubmit={this.handleSubmit}
@@ -51,14 +46,12 @@ class CollapsibleContainer extends React.Component {
             </fieldset>
           </form>
         </Collapsible>
-
         <Collapsible icon="icons-3" title="Comparte">
           <section className="share__container collapsable-open">
             <div className="share__card collapsable--content">
               <ShareButton
                 isFormValid={this.props.isFormValid}
                 createFetchCard={this.props.createFetchCard}
-                //
                 url={this.props.url}
                 cardSuccess={this.props.cardSuccess}
                 isLoading={this.props.isLoading}
@@ -67,7 +60,6 @@ class CollapsibleContainer extends React.Component {
           </section>
         </Collapsible>
       </div>
-      /* </React.Fragment> */
     );
   }
 }

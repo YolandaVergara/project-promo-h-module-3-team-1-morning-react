@@ -1,10 +1,9 @@
 import React from "react";
-import Loader from 'react-easy-loader';
-import '../stylesheets/layout/loader.scss'
+import Loader from "react-easy-loader";
+import "../stylesheets/layout/loader.scss";
 
 class ShareButton extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.handleFetch = this.handleFetch.bind(this);
   }
@@ -16,16 +15,19 @@ class ShareButton extends React.Component {
     }
   }
   render() {
-    console.log(this.props);
     const isFormValid = this.props.isFormValid;
     const cardSuccess = this.props.cardSuccess;
-    const loader = this.props.isLoading ? <div className="loader"><Loader loading="true" /></div> : null;
+    const loader = this.props.isLoading ? (
+      <div className="loader">
+        <Loader loading="true" />
+      </div>
+    ) : null;
     return (
       <React.Fragment>
         <button
           className={`share__card__button-create icon-card ${
             isFormValid ? "" : "button--filter"
-            }`}
+          }`}
           title="Crea tu tarjeta"
           type="submit"
           onClick={this.handleFetch}
@@ -36,7 +38,7 @@ class ShareButton extends React.Component {
         <div
           className={`icon-card ${
             cardSuccess === false ? "hidden" : "share__notification"
-            }`}
+          }`}
         >
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
           <a

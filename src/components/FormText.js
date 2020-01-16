@@ -8,8 +8,6 @@ class FormText extends React.Component {
   }
 
   handleInput(ev) {
-    console.log(this.props);
-
     const inputValue = ev.target.value;
     const inputName = ev.target.name;
     this.props.handleInput({
@@ -17,7 +15,6 @@ class FormText extends React.Component {
       inputName: inputName
     });
   }
-
   render() {
     return (
       <React.Fragment>
@@ -34,7 +31,6 @@ class FormText extends React.Component {
           title={this.props.title}
           value={this.props.value}
           onChange={this.handleInput}
-
         />
       </React.Fragment>
     );

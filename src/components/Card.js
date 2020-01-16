@@ -9,7 +9,6 @@ function Card(props) {
     ev.preventDefault();
     props.handleReset();
   }
-
   return (
     <section className="card-photo">
       <div className="card-photo__button">
@@ -22,7 +21,6 @@ function Card(props) {
           Reset
         </button>
       </div>
-
       <div className={`card-photo__card card-palette${props.info.palette}`}>
         <div className="card-photo__card__info border-info">
           <h2 className="card-photo__card__info__name card-name">
@@ -32,7 +30,6 @@ function Card(props) {
             {props.info.job || "Profesión"}
           </h3>
         </div>
-
         <div
           className="card-photo__card__image"
           alt="Avatar"
