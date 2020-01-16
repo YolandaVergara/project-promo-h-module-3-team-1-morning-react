@@ -8,6 +8,10 @@ class CollapsibleContainer extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  handleSubmit(ev) {
+    ev.preventDefault();
+  }
   render() {
     return (
       <React.Fragment>
@@ -34,6 +38,7 @@ class CollapsibleContainer extends React.Component {
             method=""
             id="form-fill"
             className=" collapsable-open"
+            onSubmit={this.handleSubmit}
           >
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">

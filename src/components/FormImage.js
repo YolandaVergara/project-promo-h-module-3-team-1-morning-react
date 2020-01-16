@@ -1,5 +1,5 @@
 import React from 'react';
-import placeholderImage from "../images/paquita.jpg";
+
 
 
 class FormImage extends React.Component {
@@ -50,6 +50,7 @@ class FormImage extends React.Component {
           />
           <button
             className="form-fill__group-photo--button"
+            type="button"
             title="Selecciona tu foto"
             onClick={this.fakeClick}
           >
