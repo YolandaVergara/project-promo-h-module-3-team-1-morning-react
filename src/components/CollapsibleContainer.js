@@ -14,7 +14,8 @@ class CollapsibleContainer extends React.Component {
   }
   render() {
     return (
-      <React.Fragment>
+      // <React.Fragment>
+      <div className="form">
         <Collapsible
           icon="icons-1"
           title="Diseña">
@@ -90,7 +91,8 @@ class CollapsibleContainer extends React.Component {
             </div>
           </section>
         </Collapsible>
-      </React.Fragment>
+      </div>
+      /* </React.Fragment> */
     );
   }
 }
