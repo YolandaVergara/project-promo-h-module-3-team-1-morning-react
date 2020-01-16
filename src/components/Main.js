@@ -40,7 +40,11 @@ class Main extends React.Component {
       phone: "",
       email: "",
       linkedin: "",
-      github: ""
+      github: "",
+      isFormValid: false,
+      url: "",
+      isLoading: false,
+      cardSuccess: false
     });
   }
 
