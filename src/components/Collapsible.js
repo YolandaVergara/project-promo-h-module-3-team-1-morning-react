@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../stylesheets/layout/design.scss"
 
 class Collapsible extends React.Component {
     constructor(props) {
@@ -42,9 +42,9 @@ class Collapsible extends React.Component {
                     className="design-container collapsable-open"
 
                 >
-                    <div className="design__header arrow"
+                    <div className={`design__header collapsable-open arrow ${this.state.arrow}`}
                         onClick={this.handleClick}>
-                        <i className={this.props.icon}></i>
+                        <i className={this.props.icon} ></i>
                         <h3 className="design__header--title ">{this.props.title}</h3>
                     </div>
                     <div className={this.state.collapsible}>

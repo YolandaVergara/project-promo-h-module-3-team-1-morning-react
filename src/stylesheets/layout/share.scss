@@ -112,13 +112,3 @@
 // .collapsable--content {
 //   display: none;
 // }
-
-.collapsable-open .arrow::after {
-  transform: rotate(-180deg);
-}
-.collapsable-open .collapsable--content {
-  display: flex;
-}
-.button--filter {
-  filter: grayscale(100%);
-}
