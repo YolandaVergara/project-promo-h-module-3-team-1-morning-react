@@ -1,7 +1,14 @@
 import React from "react";
 
 function Loader(props) {
-  return props.isLoading ? <div className="lds-ripple" /> : null;
+  console.log(props);
+
+  return props.isLoading ? (
+    <div className="lds-ripple">
+      <div></div>
+      <div></div>
+    </div>
+  ) : null;
 }
 
 export default Loader;

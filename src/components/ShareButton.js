@@ -30,12 +30,13 @@ class ShareButton extends React.Component {
         >
           Crear tarjeta
         </button>
+        {/*  let loader = isLoading ? <Loader type="pacman" />:null */}
+        <Loader isLoading={this.props.isLoading} />
         <div
           className={`icon-card ${
             cardSuccess === false ? "hidden" : "share__notification"
           }`}
         >
-          <Loader isLoading={this.props.isLoading} />
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
           <a
             className="notification__link"
