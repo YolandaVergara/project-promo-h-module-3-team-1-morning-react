@@ -84,8 +84,10 @@ class Main extends React.Component {
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
-    this.setState({ [name]: value }, () => {
-      this.validateForm();
+    this.setState({ [name]: value, cardSuccess: false }, () => {
+      this.validateForm()
+
+
     });
   }
 
@@ -100,7 +102,9 @@ class Main extends React.Component {
   // Fetch
   createFetchCard(data) {
     this.setState({
-      isLoading: true
+      isLoading: true,
+      cardSuccess: false
+
     });
     fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
       method: "POST",
