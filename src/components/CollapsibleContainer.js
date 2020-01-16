@@ -9,13 +9,18 @@ class CollapsibleContainer extends React.Component {
     console.log(props);
     super(props);
   }
+
+  handleSubmit(ev) {
+    ev.preventDefault();
+  }
   render() {
     return (
-      <React.Fragment>
+      // <React.Fragment>
+      <div className="form">
         <Collapsible icon="icons-1" title="Diseña">
           <div className="design__form">
             <h5 className="design__form--title">colores</h5>
-            <form className="form__palette" id="js-form-design" method="POST">
+            <form className="form__palette" id="form-design" method="POST">
               <PalettesList
                 palette={this.props.info.palette}
                 handleInput={this.props.handleInput}
@@ -23,12 +28,14 @@ class CollapsibleContainer extends React.Component {
             </form>
           </div>
         </Collapsible>
+
         <Collapsible icon="icons-2" title="Rellena">
           <form
             action=""
             method=""
-            id="js-form-fill"
-            className="js-form collapsable-open"
+            id="form-fill"
+            className=" collapsable-open"
+            onSubmit={this.handleSubmit}
           >
             <fieldset className="form-fill">
               <div className="form-fill__content collapsable--content">
@@ -46,7 +53,7 @@ class CollapsibleContainer extends React.Component {
         </Collapsible>
 
         <Collapsible icon="icons-3" title="Comparte">
-          <section className="share__container js-collapsable collapsable-open">
+          <section className="share__container collapsable-open">
             <div className="share__card collapsable--content">
               <ShareButton
                 isFormValid={this.props.isFormValid}
@@ -59,7 +66,8 @@ class CollapsibleContainer extends React.Component {
             </div>
           </section>
         </Collapsible>
-      </React.Fragment>
+      </div>
+      /* </React.Fragment> */
     );
   }
 }

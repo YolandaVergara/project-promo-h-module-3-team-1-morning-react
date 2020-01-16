@@ -85,6 +85,8 @@ class Main extends React.Component {
     });
   }
 
+  // Collapsible container
+
   // Local Storage
 
   componentDidUpdate() {

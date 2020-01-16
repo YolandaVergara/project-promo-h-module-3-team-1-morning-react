@@ -15,7 +15,7 @@ function Card(props) {
       <div className="card-photo__button">
         <button
           type="button"
-          className="card-photo__button__reset icon-reset js-reset-button"
+          className="card-photo__button__reset icon-reset"
           title="Reset"
           onClick={handleReset}
         >
@@ -23,20 +23,18 @@ function Card(props) {
         </button>
       </div>
 
-      <div
-        className={`card-photo__card js-card card-palette${props.info.palette}`}
-      >
+      <div className={`card-photo__card card-palette${props.info.palette}`}>
         <div className="card-photo__card__info border-info">
-          <h2 className="card-photo__card__info__name js-card-name card-name">
+          <h2 className="card-photo__card__info__name card-name">
             {props.info.name || "Nombre Apellido"}
           </h2>
-          <h3 className="card-photo__card__info__job js-card-job">
+          <h3 className="card-photo__card__info__job">
             {props.info.job || "Profesión"}
           </h3>
         </div>
 
         <div
-          className="card-photo__card__image js-image-pro"
+          className="card-photo__card__image"
           alt="Avatar"
           title="Imagen del usuario"
           style={{ backgroundImage: `url(${props.photo || placeholderImage})` }}

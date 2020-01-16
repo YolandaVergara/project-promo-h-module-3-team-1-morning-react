@@ -24,7 +24,7 @@ class Palette extends React.Component {
             type={this.props.type}
             name={this.props.name}
             id={this.props.id}
-            className="design__form--radio js-form-palette1"
+            className="design__form--radio"
             checked={this.props.checked}
             onChange={this.handleInput}
           />

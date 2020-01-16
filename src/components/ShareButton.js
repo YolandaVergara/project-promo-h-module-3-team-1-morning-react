@@ -38,7 +38,7 @@ class ShareButton extends React.Component {
           <Loader isLoading={this.props.isLoading} />
           <h4 className="notification__title">La tarjeta ha sido creada:</h4>
           <a
-            className="notification__link js-notification-link"
+            className="notification__link"
             title="Comparte tu tarjeta con este link"
             href={this.props.url}
             target="_blank"
@@ -46,7 +46,7 @@ class ShareButton extends React.Component {
             {this.props.url}
           </a>
           <a
-            className="notification__button-tw js__button-Twitter icon-tw"
+            className="notification__button-tw icon-tw"
             href={`https://twitter.com/intent/tweet?text=He%20creado%20esta%20tarjeta%20con%20Awesome%20Profile%20Cards:%0A;hashtags=Adalab, AwesomeProfileCards, promoHamilton ${this.props.url}`}
             title="Comparte tu tarjeta a través de twitter"
             target="_blank"

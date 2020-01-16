@@ -1,5 +1,4 @@
 import React from "react";
-import placeholderImage from "../images/paquita.jpg";
 
 class FormImage extends React.Component {
   constructor(props) {
@@ -34,11 +33,10 @@ class FormImage extends React.Component {
       <React.Fragment>
         <div className="form-fill__group-photo">
           <label className="form-fill__label" htmlFor={this.props.htmlFor}>
-            {" "}
             {this.props.label} *
           </label>
           <input
-            className="form-fill__input hidden js-file-input"
+            className="form-fill__input hidden"
             type={this.props.type}
             id={this.props.id}
             name={this.props.name}
@@ -48,14 +46,15 @@ class FormImage extends React.Component {
             onChange={this.handleImage}
           />
           <button
-            className="form-fill__group-photo--button js-uploadBtn"
+            className="form-fill__group-photo--button"
+            type="button"
             title="Selecciona tu foto"
             onClick={this.fakeClick}
           >
             Añadir imagen
           </button>
           <div
-            className="form-fill__group-photo--preview js-preview"
+            className="form-fill__group-photo--preview"
             style={{ backgroundImage: `url(${this.props.photo})` }}
           ></div>
         </div>

@@ -3,10 +3,11 @@
 
 .cards {
   @media all and (min-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+    // grid-template-rows: 1fr;
     background: $colorLightGrey;
     padding-left: 4rem;
+    display: flex;
   }
 }
