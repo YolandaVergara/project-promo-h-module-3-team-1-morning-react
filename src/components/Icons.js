@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Icon from "./Icon";
 import dataIcons from "./data/dataIcons.json";
 
@@ -6,6 +7,7 @@ class Icons extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
     return dataIcons.map((dataIcon, key) => {
       return (
@@ -20,6 +22,10 @@ class Icons extends React.Component {
       );
     });
   }
+}
+
+Icons.propTypes = {
+  info: PropTypes.object
 }
 
 export default Icons;

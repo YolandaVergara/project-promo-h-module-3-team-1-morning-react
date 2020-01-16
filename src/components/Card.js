@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import Icons from "./Icons";
 import placeholderImage from "../images/paquita.jpg";
 import "../stylesheets/pages/card.scss";
@@ -44,6 +45,12 @@ function Card(props) {
       </div>
     </section>
   );
+}
+
+Card.propTypes = {
+  info: PropTypes.object,
+  photo: PropTypes.string,
+  handleReset: PropTypes.func
 }
 
 export default Card;
