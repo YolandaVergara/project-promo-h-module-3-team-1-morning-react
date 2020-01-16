@@ -4,42 +4,39 @@ import Card from "./Card";
 import Footer from "./Footer";
 import CollapsibleContainer from "./CollapsibleContainer";
 import localStorage from "../localStorage/localStorage";
-import { fetchCard } from '../services/FetchCard';
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     const localStorageData = localStorage.get("userData", {
-
-      paletteChecked: '1',
+      palette: "1",
       name: "",
       job: "",
-      file: "",
+      photo: "",
       phone: "",
       email: "",
       linkedin: "",
       github: "",
       isFormValid: false,
-      URL: "",
+      url: "",
       isLoading: false,
-      cardSuccess: "",
-
+      cardSuccess: false
     });
 
     this.state = localStorageData;
     this.handleInput = this.handleInput.bind(this);
     this.handleReset = this.handleReset.bind(this);
-
+    this.handleFetch = this.handleFetch.bind(this);
   }
 
   // Botón Reset
 
   handleReset() {
     this.setState({
-      paletteChecked: '1',
+      palette: "1",
       name: "",
       job: "",
-      file: "",
+      photo: "",
       phone: "",
       email: "",
       linkedin: "",
@@ -54,36 +51,41 @@ class Main extends React.Component {
     const phone = this.state.phone;
 
     const newState = {
-      ...this.state, phone: phone.match(/^[0-9]{9}/), email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+      ...this.state,
+      phone: phone.match(/^[0-9]{9}/),
+      email: email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     };
 
     if (
-      newState.name && newState.job && newState.file && newState.phone && newState.email && newState.linkedin && newState.github) {
+      newState.name &&
+      newState.job &&
+      newState.photo &&
+      newState.phone &&
+      newState.email &&
+      newState.linkedin &&
+      newState.github
+    ) {
       this.setState({
         isFormValid: true
-      })
+      });
     } else {
       this.setState({
         isFormValid: false
-      })
+      });
     }
-  };
-
+  }
 
   // Manejo de inputs, paletas e imagen
 
   handleInput(data) {
     const name = data.inputName;
     const value = data.inputValue;
-    this.setState(
-      { [name]: value },
-      () => {
-        this.validateForm();
-      });
+    this.setState({ [name]: value }, () => {
+      this.validateForm();
+    });
   }
 
   // Collapsible container
-
 
   // Local Storage
 
@@ -92,36 +94,37 @@ class Main extends React.Component {
   }
 
   // Fetch
-  fetchCard() {
-    const JSON = JSON.parse(localStorage.getItem("data"));
-    fetchCard(JSON)
-      .then(result => this.createURL(result))
+  createFetchCard(data) {
+    fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          this.setState({
+            url: result.cardURL,
+            cardSuccess: true,
+            isLoading: false
+          });
+        } else {
+          this.setState({
+            cardURL: "ERROR:" + result.error,
+            isLoading: false
+          });
+        }
+      })
       .catch(error => console.log(error));
-    this.setState({
-      isLoading: true
-    });
   }
-
-  // Helpers
-
-  createURL(result) {
-    if (result.success) {
-      this.setState({
-        URL: result.URL,
-        isLoading: false,
-        cardSuccess: true
-      });
-    } else {
-      this.setState({
-        URL: "ERROR:" + result.error,
-        isLoading: false
-      });
-    }
+  handleFetch() {
+    this.createFetchCard(this.state);
   }
 
   render() {
     console.log(this.state);
-
     return (
       <div className="App">
         <Header />
@@ -129,24 +132,19 @@ class Main extends React.Component {
         <main className="cards">
           <Card
             info={this.state}
-            file={this.state.file}
+            photo={this.state.photo}
             handleReset={this.handleReset}
-
           />
           <CollapsibleContainer
-
             handleInput={this.handleInput}
             info={this.state}
-            file={this.state.file}
+            photo={this.state.photo}
             isFormValid={this.state.isFormValid}
-            fetchCard={this.props.fetchCard}
+            createFetchCard={this.handleFetch}
             //
-            URL={this.state.URL}
-
-          /*cardSuccess={this.state.cardSuccess}
-          isLoading={this.state.isLoading}*/
-
-
+            url={this.state.url}
+            cardSuccess={this.state.cardSuccess}
+            isLoading={this.state.isLoading}
           />
         </main>
 

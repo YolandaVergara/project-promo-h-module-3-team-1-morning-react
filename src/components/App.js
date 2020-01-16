@@ -6,16 +6,16 @@ import "../stylesheets/App.scss";
 import "../stylesheets/layout/design.scss";
 import "../stylesheets/layout/fill.scss";
 import "../stylesheets/layout/share.scss";
+import "../stylesheets/layout/loader.scss";
 
-function App () {
-
-    return (
-      <div>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route path="/main" component={Main} />
-        </Switch>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <div>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/main" component={Main} />
+      </Switch>
+    </div>
+  );
+}
 export default App;
