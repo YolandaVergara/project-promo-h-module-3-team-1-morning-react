@@ -6,7 +6,8 @@ class Collapsible extends React.Component {
         super(props);
 
         this.state = {
-            collapsible: "hidden"
+            collapsible: "hidden",
+            arrow: ""
         }
         this.handleClick = this.handleClick.bind(this)
     }
@@ -14,14 +15,21 @@ class Collapsible extends React.Component {
     handleClick() {
 
         let collapsibleStatus;
+        let newArrow;
 
         this.setState(prevState => {
             if (prevState.collapsible === "hidden") {
                 collapsibleStatus = "collapsable-open";
+                newArrow = "arrow-amimation";
+
             } else {
-                collapsibleStatus = "hidden"
+                collapsibleStatus = "hidden";
+                newArrow = "";
             }
-            return { collapsible: collapsibleStatus }
+            return {
+                collapsible: collapsibleStatus,
+                arrow: newArrow
+            }
 
         })
     }
@@ -37,13 +45,13 @@ class Collapsible extends React.Component {
                     <div className="design__header arrow"
                         onClick={this.handleClick}>
                         <i className={this.props.icon}></i>
-                        <h3 className="design__header--title">{this.props.title}</h3>
+                        <h3 className="design__header--title ">{this.props.title}</h3>
                     </div>
                     <div className={this.state.collapsible}>
                         {this.props.children}
                     </div>
                 </div>
-            </React.Fragment>
+            </React.Fragment >
         );
     }
 }
